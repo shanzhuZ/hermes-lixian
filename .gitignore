@@ -1,0 +1,88 @@
+# 密钥与本地认证（严禁入库）
+.env
+.env.local
+.env.*.local
+auth.json
+auth.lock
+**/cookies.json
+**/*credentials*
+**/*.pem
+**/*.ppk
+
+# Hermes 运行时状态
+state.db
+state.db-shm
+state.db-wal
+gateway.pid
+gateway.lock
+gateway_state.json
+kanban.db
+kanban.db-shm
+kanban.db-wal
+kanban.db.dispatch.lock
+kanban.db.init.lock
+kanban/
+response_store.db
+response_store.db-shm
+response_store.db-wal
+verification_evidence.db
+channel_directory.json
+var/hermes/
+*.db-journal
+.hermes_history
+.update_check
+.skills_prompt_snapshot.json
+models_dev_cache.json
+ollama_cloud_models_cache.json
+provider_models_cache.json
+
+# 缓存与会话
+cache/
+audio_cache/
+image_cache/
+images/
+sessions/
+sandboxes/
+logs/
+pairing/
+memories/
+cron/
+hooks/
+# 误建目录名
+vmr --version/
+
+# 嵌套空仓库（曾用于占位 remote）
+/hermes-xw/
+
+# Python / Node
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+node_modules/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# 临时与调试
+tmp/
+temp/
+*.log
+_tweets_raw.json
+
+# hermes-agent 上游已有 ignore，再兜一层常见构建物
+hermes-agent/**/node_modules/
+hermes-agent/**/.venv/
+hermes-agent/**/dist/
+hermes-agent/**/build/
+hermes-agent/**/__pycache__/

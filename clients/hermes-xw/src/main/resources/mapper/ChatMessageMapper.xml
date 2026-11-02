@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.aw.chat.mapper.ChatMessageMapper">
+
+    <insert id="insertMessage">
+        INSERT INTO xw_chat_message (session_id, task_id, role, content, msg_type)
+        VALUES (#{sessionId}, #{taskId}, #{role}, #{content}, #{msgType})
+    </insert>
+
+    <select id="selectBySessionId" resultType="java.util.HashMap">
+        SELECT id, session_id, task_id, role, content, msg_type, created_at
+        FROM xw_chat_message
+        WHERE session_id = #{sessionId}
+        ORDER BY id ASC
+        LIMIT #{limit}
+    </select>
+</mapper>

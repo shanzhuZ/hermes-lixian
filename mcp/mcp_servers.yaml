@@ -1,0 +1,36 @@
+# hermes-lixian：仅人员库 + 组织库 MCP
+mcp_servers:
+  identity-mcp:
+    enabled: true
+    command: D:/environment/python/python.exe
+    args:
+      - D:/hermes-lixian/mcp/servers/identity-mcp-server/run_identity_mcp.py
+    cwd: D:/hermes-lixian/mcp/servers/identity-mcp-server
+    env:
+      FASTMCP_SHOW_SERVER_BANNER: 'false'
+      PYTHONUTF8: '1'
+      PYTHONIOENCODING: utf-8
+      ES_HOST: ${ES_HOST}
+      ES_USERNAME: ${ES_USERNAME}
+      ES_PASSWORD: ${ES_PASSWORD}
+      IDENTITY_INDEX: dw_identity_info_lk_country_wise_new_all
+    supports_parallel_tool_calls: true
+    timeout: 120
+    connect_timeout: 120
+  org-mcp:
+    enabled: true
+    command: D:/environment/python/python.exe
+    args:
+      - D:/hermes-lixian/mcp/servers/org-mcp-server/run_org_mcp.py
+    cwd: D:/hermes-lixian/mcp/servers/org-mcp-server
+    env:
+      FASTMCP_SHOW_SERVER_BANNER: 'false'
+      PYTHONUTF8: '1'
+      PYTHONIOENCODING: utf-8
+      ES_HOST: ${ES_HOST}
+      ES_USERNAME: ${ES_USERNAME}
+      ES_PASSWORD: ${ES_PASSWORD}
+      ORG_INDEX: dw_org_info_lk_company
+    supports_parallel_tool_calls: true
+    timeout: 120
+    connect_timeout: 120

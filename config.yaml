@@ -1,0 +1,61 @@
+model:
+  # DeepSeek V4：官方 ID 为 deepseek-v4-flash / deepseek-v4-pro（无 deepseek-v4 单名）
+  default: deepseek-v4-flash
+  provider: deepseek
+  base_url: https://api.deepseek.com
+  # 备用主模型：大数据自建 DeepSeek（内网直连，见下方 providers.dsv4-dspark）
+  #   default: dsv4-dspark
+  #   provider: custom:dsv4-dspark
+  #   base_url: http://172.200.200.4:7000/v1
+providers:
+  dsv4-dspark:
+    name: 大数据
+    base_url: http://172.200.200.4:7000/v1
+    default_model: dsv4-dspark
+    discover_models: true
+agent:
+  max_turns: 100
+  verbose: false
+mcp_servers:
+  identity-mcp:
+    enabled: true
+    command: D:/environment/python/python.exe
+    args:
+      - D:/hermes-lixian/mcp/servers/identity-mcp-server/run_identity_mcp.py
+    cwd: D:/hermes-lixian/mcp/servers/identity-mcp-server
+    env:
+      FASTMCP_SHOW_SERVER_BANNER: 'false'
+      PYTHONUTF8: '1'
+      PYTHONIOENCODING: utf-8
+      ES_HOST: ${ES_HOST}
+      ES_USERNAME: ${ES_USERNAME}
+      ES_PASSWORD: ${ES_PASSWORD}
+      IDENTITY_INDEX: dw_identity_info_lk_country_wise_new_all
+    supports_parallel_tool_calls: true
+    timeout: 120
+    connect_timeout: 120
+  org-mcp:
+    enabled: true
+    command: D:/environment/python/python.exe
+    args:
+      - D:/hermes-lixian/mcp/servers/org-mcp-server/run_org_mcp.py
+    cwd: D:/hermes-lixian/mcp/servers/org-mcp-server
+    env:
+      FASTMCP_SHOW_SERVER_BANNER: 'false'
+      PYTHONUTF8: '1'
+      PYTHONIOENCODING: utf-8
+      ES_HOST: ${ES_HOST}
+      ES_USERNAME: ${ES_USERNAME}
+      ES_PASSWORD: ${ES_PASSWORD}
+      ORG_INDEX: dw_org_info_lk_company
+    supports_parallel_tool_calls: true
+    timeout: 120
+    connect_timeout: 120
+onboarding:
+  seen:
+    tool_progress_prompt: true
+
+# 过程入库插件（Hook 直连 MySQL；终稿也由 Hook 写）
+plugins:
+  enabled:
+    - xw-ingest

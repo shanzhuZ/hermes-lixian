@@ -1,0 +1,1426 @@
+[
+  {
+    "case": "W3 涉华+美国(宽查询默认)",
+    "skill": "basic",
+    "input": {
+      "biz_tag": "涉华",
+      "location_country": "united states",
+      "size": 10,
+      "strict": true
+    },
+    "total": ">10000",
+    "returned": 4,
+    "is_sample": true,
+    "has_more": true,
+    "hard": 4,
+    "n": 4,
+    "hard_ratio": 1.0,
+    "rows": [
+      {
+        "name": "anna cranor",
+        "title": null,
+        "company": null,
+        "industry": "logistics and supply chain",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "north carolina state university",
+            "country": "united states",
+            "degrees": null
+          },
+          {
+            "school": "shanghai university",
+            "country": "china",
+            "degrees": null
+          }
+        ]
+      },
+      {
+        "name": "dawei xu",
+        "title": "sales consultant intern at wholeren education, llc",
+        "company": "wholeren education, llc",
+        "industry": "higher education",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "tangshan no.1 high school",
+            "country": null,
+            "degrees": null
+          },
+          {
+            "school": "university of washington",
+            "country": "united states",
+            "degrees": "bachelors"
+          }
+        ]
+      },
+      {
+        "name": "valerie carothers",
+        "title": "project coordinator",
+        "company": "rbc bank",
+        "industry": "computer hardware",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "appalachian state university",
+            "country": "united states",
+            "degrees": null
+          },
+          {
+            "school": "wake technical community college",
+            "country": "united states",
+            "degrees": "associates"
+          }
+        ]
+      },
+      {
+        "name": "yuning wu",
+        "title": "assistant professor",
+        "company": "wayne state university",
+        "industry": "higher education",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "renmin university of china",
+            "country": "china",
+            "degrees": "bachelors, bachelor of law"
+          },
+          {
+            "school": "university of delaware",
+            "country": "united states",
+            "degrees": "doctorates, doctor of philosophy"
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "sec": 31.9
+  },
+  {
+    "case": "W4.1 在华教育+美国",
+    "skill": "basic",
+    "input": {
+      "edu_country": "china",
+      "location_country": "united states",
+      "size": 10,
+      "strict": true
+    },
+    "total": ">10000",
+    "returned": 2,
+    "is_sample": true,
+    "has_more": true,
+    "hard": 2,
+    "n": 2,
+    "hard_ratio": 1.0,
+    "rows": [
+      {
+        "name": "anna cranor",
+        "title": null,
+        "company": null,
+        "industry": "logistics and supply chain",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "north carolina state university",
+            "country": "united states",
+            "degrees": null
+          },
+          {
+            "school": "shanghai university",
+            "country": "china",
+            "degrees": null
+          }
+        ]
+      },
+      {
+        "name": "yuning wu",
+        "title": "assistant professor",
+        "company": "wayne state university",
+        "industry": "higher education",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "renmin university of china",
+            "country": "china",
+            "degrees": "bachelors, bachelor of law"
+          },
+          {
+            "school": "university of delaware",
+            "country": "united states",
+            "degrees": "doctorates, doctor of philosophy"
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "sec": 1.7
+  },
+  {
+    "case": "W4.1 在港教育+美国",
+    "skill": "basic",
+    "input": {
+      "edu_country": "hong kong",
+      "location_country": "united states",
+      "size": 5,
+      "strict": true
+    },
+    "total": ">10000",
+    "returned": 4,
+    "is_sample": true,
+    "has_more": true,
+    "hard": 4,
+    "n": 4,
+    "hard_ratio": 1.0,
+    "rows": [
+      {
+        "name": "lan lee",
+        "title": "engineer",
+        "company": "h.k precision technology",
+        "industry": null,
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "the university of hong kong",
+            "country": "hong kong",
+            "degrees": "bachelor of engineering, bachelors"
+          }
+        ]
+      },
+      {
+        "name": "ulysses chan",
+        "title": null,
+        "company": null,
+        "industry": "financial services",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "columbia university in the city of new york",
+            "country": "united states",
+            "degrees": null
+          },
+          {
+            "school": "hkuspace community college",
+            "country": null,
+            "degrees": "associates"
+          }
+        ]
+      },
+      {
+        "name": "jue lin",
+        "title": null,
+        "company": null,
+        "industry": null,
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "northwestern university",
+            "country": "united states",
+            "degrees": "master of science, masters"
+          },
+          {
+            "school": "the hong kong polytechnic university",
+            "country": "hong kong",
+            "degrees": "bachelor of engineering, bachelors"
+          }
+        ]
+      },
+      {
+        "name": "patrick mckenzie",
+        "title": "research analyst",
+        "company": "avison young",
+        "industry": "real estate",
+        "flags": [
+          "edu_in_target",
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "santa clara university",
+            "country": "united states",
+            "degrees": "bachelors, bachelor of science"
+          },
+          {
+            "school": "city university of hong kong",
+            "country": "hong kong",
+            "degrees": null
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "sec": 9.6
+  },
+  {
+    "case": "W4.2 在华工作+美国",
+    "skill": "basic",
+    "input": {
+      "work_country": "china",
+      "location_country": "united states",
+      "size": 10,
+      "strict": true
+    },
+    "total": ">10000",
+    "returned": 5,
+    "is_sample": true,
+    "has_more": true,
+    "hard": 5,
+    "n": 5,
+    "hard_ratio": 1.0,
+    "rows": [
+      {
+        "name": "dawei xu",
+        "title": "sales consultant intern at wholeren education, llc",
+        "company": "wholeren education, llc",
+        "industry": "higher education",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "tangshan no.1 high school",
+            "country": null,
+            "degrees": null
+          },
+          {
+            "school": "university of washington",
+            "country": "united states",
+            "degrees": "bachelors"
+          }
+        ]
+      },
+      {
+        "name": "valerie carothers",
+        "title": "project coordinator",
+        "company": "rbc bank",
+        "industry": "computer hardware",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "appalachian state university",
+            "country": "united states",
+            "degrees": null
+          },
+          {
+            "school": "wake technical community college",
+            "country": "united states",
+            "degrees": "associates"
+          }
+        ]
+      },
+      {
+        "name": "wilson zhang",
+        "title": "business partner",
+        "company": "allstar capital inc",
+        "industry": "financial services",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "california state university, los angeles",
+            "country": "united states",
+            "degrees": "master of science, masters"
+          }
+        ]
+      },
+      {
+        "name": "赵佳rosy zhao",
+        "title": "deputy general manager",
+        "company": "huarui logistics",
+        "industry": "warehousing",
+        "flags": [
+          "edu_in_target",
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "zhejiang gongshang university",
+            "country": "china",
+            "degrees": "master of business administration, masters"
+          },
+          {
+            "school": "east china jiaotong university",
+            "country": "china",
+            "degrees": "bachelors"
+          }
+        ]
+      },
+      {
+        "name": "janos botyanszki",
+        "title": "data science manager",
+        "company": "known",
+        "industry": "management consulting",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "university of california, berkeley",
+            "country": "united states",
+            "degrees": "bachelors, bachelor of arts"
+          },
+          {
+            "school": "university of california, berkeley",
+            "country": "united states",
+            "degrees": "doctorates, doctor of philosophy"
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "sec": 6.3
+  },
+  {
+    "case": "W4.2 在台工作+美国",
+    "skill": "basic",
+    "input": {
+      "work_country": "taiwan",
+      "location_country": "united states",
+      "size": 5,
+      "strict": true
+    },
+    "total": ">10000",
+    "returned": 4,
+    "is_sample": true,
+    "has_more": true,
+    "hard": 4,
+    "n": 4,
+    "hard_ratio": 1.0,
+    "rows": [
+      {
+        "name": "vanessa celis",
+        "title": "freelance writer",
+        "company": "healthyplace",
+        "industry": "writing and editing",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "university at albany, suny",
+            "country": "united states",
+            "degrees": "bachelors, bachelor of arts"
+          },
+          {
+            "school": "suny orange",
+            "country": "united states",
+            "degrees": "associates, associate of arts"
+          }
+        ]
+      },
+      {
+        "name": "brian yang",
+        "title": "principal engineer asic development",
+        "company": "western digital",
+        "industry": "computer hardware",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "santa clara university",
+            "country": "united states",
+            "degrees": "master of science, masters"
+          }
+        ]
+      },
+      {
+        "name": "larissa miller",
+        "title": "systems engineer for software development",
+        "company": "boeing",
+        "industry": "aviation & aerospace",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "university of washington",
+            "country": "united states",
+            "degrees": "bachelors, bachelor of science"
+          },
+          {
+            "school": "peninsula high school",
+            "country": null,
+            "degrees": null
+          }
+        ]
+      },
+      {
+        "name": "dorris hwang",
+        "title": "architectural designer",
+        "company": "wilmot sanz inc",
+        "industry": "architecture & planning",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "university of washington",
+            "country": "united states",
+            "degrees": "bachelors, bachelor of arts"
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "sec": 11.6
+  },
+  {
+    "case": "W4.3 高校任职(company=tsinghua)",
+    "skill": "basic",
+    "input": {
+      "company_keyword": "tsinghua",
+      "location_country": "united states",
+      "size": 5,
+      "strict": false
+    },
+    "total": 9326,
+    "returned": 3,
+    "is_sample": false,
+    "has_more": true,
+    "hard": 0,
+    "n": 3,
+    "hard_ratio": 0.0,
+    "rows": [
+      {
+        "name": "julia noll",
+        "title": null,
+        "company": null,
+        "industry": "research",
+        "flags": [],
+        "hard": false,
+        "edu": [
+          {
+            "school": "tsinghua university",
+            "country": "china",
+            "degrees": null
+          },
+          {
+            "school": "university of pennsylvania",
+            "country": null,
+            "degrees": null
+          }
+        ]
+      },
+      {
+        "name": "zetong jia",
+        "title": null,
+        "company": "schwarzman scholars",
+        "industry": "international affairs",
+        "flags": [],
+        "hard": false,
+        "edu": [
+          {
+            "school": "new york university",
+            "country": "united states",
+            "degrees": "bachelors, bachelor of arts"
+          },
+          {
+            "school": "department of sociology, lse",
+            "country": "united kingdom",
+            "degrees": null
+          }
+        ]
+      },
+      {
+        "name": "yitian li",
+        "title": "full stack software engineer",
+        "company": "google",
+        "industry": "computer software",
+        "flags": [],
+        "hard": false,
+        "edu": [
+          {
+            "school": "university of california, berkeley",
+            "country": "united states",
+            "degrees": null
+          },
+          {
+            "school": "beijing no.20 high school",
+            "country": null,
+            "degrees": null
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "sec": 13.9
+  },
+  {
+    "case": "W5 在华教育+高通",
+    "skill": "basic",
+    "input": {
+      "edu_country": "china",
+      "company_keyword": "qualcomm",
+      "size": 10,
+      "strict": true
+    },
+    "total": 2634,
+    "returned": 7,
+    "is_sample": false,
+    "has_more": true,
+    "hard": 5,
+    "n": 5,
+    "hard_ratio": 1.0,
+    "rows": [
+      {
+        "name": "jia yao",
+        "title": "staff engineer",
+        "company": "qualcomm",
+        "industry": "computer hardware",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "shandong university",
+            "country": "china",
+            "degrees": "bachelors, bachelor of science"
+          },
+          {
+            "school": "auburn university",
+            "country": "united states",
+            "degrees": "master of science, masters"
+          }
+        ]
+      },
+      {
+        "name": "huijun xiong",
+        "title": "staff test engineer",
+        "company": "qualcomm",
+        "industry": "information technology and services",
+        "flags": [
+          "edu_in_target",
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "shanghai university",
+            "country": "china",
+            "degrees": "masters"
+          }
+        ]
+      },
+      {
+        "name": "botao wang",
+        "title": "senior engineer",
+        "company": "qualcomm",
+        "industry": "research",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "shanghai jiao tong university",
+            "country": "china",
+            "degrees": "doctorates, doctor of philosophy"
+          },
+          {
+            "school": "shanghai jiao tong university",
+            "country": "china",
+            "degrees": "bachelors"
+          }
+        ]
+      },
+      {
+        "name": "gary zhang",
+        "title": "senior staff sw engineer and manager",
+        "company": "qualcomm wireless communication technologies (china) ltd",
+        "industry": "telecommunications",
+        "flags": [
+          "edu_in_target",
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "beijing university of posts and telecommunications",
+            "country": "china",
+            "degrees": "masters"
+          },
+          {
+            "school": "beijing university of post and telecommunications",
+            "country": null,
+            "degrees": "bachelors"
+          }
+        ]
+      },
+      {
+        "name": "changting xu",
+        "title": "system engineer, senior",
+        "company": "qualcomm",
+        "industry": "electrical/electronic manufacturing",
+        "flags": [
+          "edu_in_target",
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "anxi no.1 high school",
+            "country": null,
+            "degrees": null
+          },
+          {
+            "school": "carnegie mellon university",
+            "country": "united states",
+            "degrees": null
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "sec": 6.3
+  },
+  {
+    "case": "W5 在华教育+高科技词",
+    "skill": "basic",
+    "input": {
+      "edu_country": "china",
+      "location_country": "united states",
+      "industry_keywords": [
+        "computer software",
+        "semiconductors",
+        "internet",
+        "information technology and services"
+      ],
+      "size": 10,
+      "strict": true
+    },
+    "total": ">10000",
+    "returned": 4,
+    "is_sample": true,
+    "has_more": true,
+    "hard": 4,
+    "n": 4,
+    "hard_ratio": 1.0,
+    "rows": [
+      {
+        "name": "xue lu",
+        "title": "principal engineer",
+        "company": "oracle",
+        "industry": "computer software",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "the university of texas at austin",
+            "country": "united states",
+            "degrees": "master of science, masters"
+          },
+          {
+            "school": "tsinghua university",
+            "country": "china",
+            "degrees": "bachelor of engineering, bachelors"
+          }
+        ]
+      },
+      {
+        "name": "xiang gao",
+        "title": "engineering director",
+        "company": "credo semiconductor inc.",
+        "industry": "semiconductors",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "university of twente",
+            "country": "netherlands",
+            "degrees": "doctorates, doctor of philosophy"
+          },
+          {
+            "school": "university of twente",
+            "country": "netherlands",
+            "degrees": "master of science, masters"
+          }
+        ]
+      },
+      {
+        "name": "kevin salat",
+        "title": "product marketing manager",
+        "company": "microsoft",
+        "industry": "marketing and advertising",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "east china normal university",
+            "country": "china",
+            "degrees": null
+          },
+          {
+            "school": "east china normal university",
+            "country": "china",
+            "degrees": null
+          }
+        ]
+      },
+      {
+        "name": "jingyong pan",
+        "title": "lead industrial engineer",
+        "company": "zume inc.",
+        "industry": "semiconductors",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "university at buffalo",
+            "country": "united states",
+            "degrees": "master of science, masters"
+          },
+          {
+            "school": "ocean university of china",
+            "country": "china",
+            "degrees": "bachelors, bachelor of science"
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "sec": 18.6
+  },
+  {
+    "case": "W5 涉华政客(错误路径title=senator)",
+    "skill": "public-figure-禁止",
+    "input": {
+      "biz_tag": "涉华",
+      "location_country": "united states",
+      "title_keywords": [
+        "senator"
+      ],
+      "size": 10,
+      "strict": true
+    },
+    "total": 24,
+    "returned": 4,
+    "is_sample": false,
+    "has_more": true,
+    "hard": 4,
+    "n": 4,
+    "hard_ratio": 1.0,
+    "rows": [
+      {
+        "name": "erick watson",
+        "title": "senator, representing the united states",
+        "company": "world business angels investment forum",
+        "industry": "computer software",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "northeast mississippi community college",
+            "country": "united states",
+            "degrees": "associates, associate of arts"
+          },
+          {
+            "school": "vandebilt catholic high school",
+            "country": null,
+            "degrees": null
+          }
+        ]
+      },
+      {
+        "name": "wayne iseri",
+        "title": "senator",
+        "company": "mongolia",
+        "industry": "shipbuilding",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "honolulu university",
+            "country": null,
+            "degrees": null
+          }
+        ]
+      },
+      {
+        "name": "kelly dong",
+        "title": "junior senator",
+        "company": "accounting student association",
+        "industry": "accounting",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "shanghai high school",
+            "country": null,
+            "degrees": null
+          },
+          {
+            "school": "university of california, los angeles",
+            "country": "united states",
+            "degrees": null
+          }
+        ]
+      },
+      {
+        "name": "zhuoer xu",
+        "title": "senator; music and arts committee member",
+        "company": null,
+        "industry": "music",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "hubei university",
+            "country": "china",
+            "degrees": "bachelors"
+          },
+          {
+            "school": "university of miami",
+            "country": "united states",
+            "degrees": "masters"
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "sec": 3.6
+  },
+  {
+    "case": "W6 AND 涉华+在华教育+美国",
+    "skill": "basic",
+    "input": {
+      "biz_tag": "涉华",
+      "edu_country": "china",
+      "location_country": "united states",
+      "size": 10,
+      "strict": true
+    },
+    "total": ">10000",
+    "returned": 2,
+    "is_sample": true,
+    "has_more": true,
+    "hard": 2,
+    "n": 2,
+    "hard_ratio": 1.0,
+    "rows": [
+      {
+        "name": "anna cranor",
+        "title": null,
+        "company": null,
+        "industry": "logistics and supply chain",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "north carolina state university",
+            "country": "united states",
+            "degrees": null
+          },
+          {
+            "school": "shanghai university",
+            "country": "china",
+            "degrees": null
+          }
+        ]
+      },
+      {
+        "name": "yuning wu",
+        "title": "assistant professor",
+        "company": "wayne state university",
+        "industry": "higher education",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "renmin university of china",
+            "country": "china",
+            "degrees": "bachelors, bachelor of law"
+          },
+          {
+            "school": "university of delaware",
+            "country": "united states",
+            "degrees": "doctorates, doctor of philosophy"
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "sec": 10.1
+  },
+  {
+    "case": "W7 NOT 在华教育",
+    "skill": "exclude-or",
+    "input": {
+      "biz_tag": "涉华",
+      "location_country": "united states",
+      "exclude_edu_country": "china",
+      "size": 10,
+      "strict": true
+    },
+    "total": ">10000",
+    "returned": 6,
+    "is_sample": true,
+    "has_more": true,
+    "hard": 5,
+    "n": 5,
+    "hard_ratio": 1.0,
+    "rows": [
+      {
+        "name": "dawei xu",
+        "title": "sales consultant intern at wholeren education, llc",
+        "company": "wholeren education, llc",
+        "industry": "higher education",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "tangshan no.1 high school",
+            "country": null,
+            "degrees": null
+          },
+          {
+            "school": "university of washington",
+            "country": "united states",
+            "degrees": "bachelors"
+          }
+        ]
+      },
+      {
+        "name": "valerie carothers",
+        "title": "project coordinator",
+        "company": "rbc bank",
+        "industry": "computer hardware",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "appalachian state university",
+            "country": "united states",
+            "degrees": null
+          },
+          {
+            "school": "wake technical community college",
+            "country": "united states",
+            "degrees": "associates"
+          }
+        ]
+      },
+      {
+        "name": "wilson zhang",
+        "title": "business partner",
+        "company": "allstar capital inc",
+        "industry": "financial services",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "california state university, los angeles",
+            "country": "united states",
+            "degrees": "master of science, masters"
+          }
+        ]
+      },
+      {
+        "name": "janos botyanszki",
+        "title": "data science manager",
+        "company": "known",
+        "industry": "management consulting",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "university of california, berkeley",
+            "country": "united states",
+            "degrees": "bachelors, bachelor of arts"
+          },
+          {
+            "school": "university of california, berkeley",
+            "country": "united states",
+            "degrees": "doctorates, doctor of philosophy"
+          }
+        ]
+      },
+      {
+        "name": "huy vu",
+        "title": "product manager",
+        "company": "geoswift",
+        "industry": "financial services",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "university of ho - chi - minh city",
+            "country": null,
+            "degrees": "bachelors, bachelor of science"
+          },
+          {
+            "school": "chisholm institute",
+            "country": "australia",
+            "degrees": null
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "sec": 11.6
+  },
+  {
+    "case": "W7 NOT 退休",
+    "skill": "exclude-or",
+    "input": {
+      "biz_tag": "涉华",
+      "location_country": "united states",
+      "exclude_retired": true,
+      "size": 10,
+      "strict": true
+    },
+    "total": ">10000",
+    "returned": 4,
+    "is_sample": true,
+    "has_more": true,
+    "hard": 4,
+    "n": 4,
+    "hard_ratio": 1.0,
+    "rows": [
+      {
+        "name": "anna cranor",
+        "title": null,
+        "company": null,
+        "industry": "logistics and supply chain",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "north carolina state university",
+            "country": "united states",
+            "degrees": null
+          },
+          {
+            "school": "shanghai university",
+            "country": "china",
+            "degrees": null
+          }
+        ]
+      },
+      {
+        "name": "dawei xu",
+        "title": "sales consultant intern at wholeren education, llc",
+        "company": "wholeren education, llc",
+        "industry": "higher education",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "tangshan no.1 high school",
+            "country": null,
+            "degrees": null
+          },
+          {
+            "school": "university of washington",
+            "country": "united states",
+            "degrees": "bachelors"
+          }
+        ]
+      },
+      {
+        "name": "valerie carothers",
+        "title": "project coordinator",
+        "company": "rbc bank",
+        "industry": "computer hardware",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "appalachian state university",
+            "country": "united states",
+            "degrees": null
+          },
+          {
+            "school": "wake technical community college",
+            "country": "united states",
+            "degrees": "associates"
+          }
+        ]
+      },
+      {
+        "name": "yuning wu",
+        "title": "assistant professor",
+        "company": "wayne state university",
+        "industry": "higher education",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "renmin university of china",
+            "country": "china",
+            "degrees": "bachelors, bachelor of law"
+          },
+          {
+            "school": "university of delaware",
+            "country": "united states",
+            "degrees": "doctorates, doctor of philosophy"
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "sec": 4.3
+  },
+  {
+    "case": "W7 OR 在华工作|教育",
+    "skill": "exclude-or",
+    "input": {
+      "work_country": "china",
+      "edu_country": "china",
+      "condition_logic": "or",
+      "location_country": "united states",
+      "size": 10,
+      "strict": true
+    },
+    "total": ">10000",
+    "returned": 4,
+    "is_sample": true,
+    "has_more": true,
+    "hard": 4,
+    "n": 4,
+    "hard_ratio": 1.0,
+    "rows": [
+      {
+        "name": "anna cranor",
+        "title": null,
+        "company": null,
+        "industry": "logistics and supply chain",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "north carolina state university",
+            "country": "united states",
+            "degrees": null
+          },
+          {
+            "school": "shanghai university",
+            "country": "china",
+            "degrees": null
+          }
+        ]
+      },
+      {
+        "name": "dawei xu",
+        "title": "sales consultant intern at wholeren education, llc",
+        "company": "wholeren education, llc",
+        "industry": "higher education",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "tangshan no.1 high school",
+            "country": null,
+            "degrees": null
+          },
+          {
+            "school": "university of washington",
+            "country": "united states",
+            "degrees": "bachelors"
+          }
+        ]
+      },
+      {
+        "name": "valerie carothers",
+        "title": "project coordinator",
+        "company": "rbc bank",
+        "industry": "computer hardware",
+        "flags": [
+          "work_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "appalachian state university",
+            "country": "united states",
+            "degrees": null
+          },
+          {
+            "school": "wake technical community college",
+            "country": "united states",
+            "degrees": "associates"
+          }
+        ]
+      },
+      {
+        "name": "yuning wu",
+        "title": "assistant professor",
+        "company": "wayne state university",
+        "industry": "higher education",
+        "flags": [
+          "edu_in_target"
+        ],
+        "hard": true,
+        "edu": [
+          {
+            "school": "renmin university of china",
+            "country": "china",
+            "degrees": "bachelors, bachelor of law"
+          },
+          {
+            "school": "university of delaware",
+            "country": "united states",
+            "degrees": "doctorates, doctor of philosophy"
+          }
+        ]
+      }
+    ],
+    "ok": true,
+    "sec": 34.6
+  },
+  {
+    "case": "W8/W9 多轮 R1涉华美→R2在华教育→R3科技",
+    "skill": "multiturn",
+    "ok": true,
+    "sec": null,
+    "total": null,
+    "returned": 1,
+    "is_sample": false,
+    "hard": 0,
+    "n": 1,
+    "meta": {
+      "pool_r1": 16,
+      "r2": 7,
+      "r3": 1
+    },
+    "rows": [
+      {
+        "name": "xue lu",
+        "industry": "computer software",
+        "flags": null
+      }
+    ]
+  },
+  {
+    "case": "W5 政客正确路径 lookup",
+    "skill": "public-figure",
+    "ok": true,
+    "lookups": [
+      {
+        "name": "Marco Rubio",
+        "returned": 3,
+        "hits": [
+          {
+            "n": "marco rubio",
+            "t": "accountant",
+            "c": "forbes"
+          },
+          {
+            "n": "marco rubio",
+            "t": null,
+            "c": null
+          },
+          {
+            "n": "marco rubio",
+            "t": "helpdesk analyst",
+            "c": "htx services llc"
+          }
+        ]
+      },
+      {
+        "name": "Nancy Pelosi",
+        "returned": 3,
+        "hits": [
+          {
+            "n": "nancy pelosi",
+            "t": "administrative assistant",
+            "c": "fremont hotel and casino"
+          },
+          {
+            "n": "nancy pelosi",
+            "t": "democrat leader",
+            "c": "u.s. house of representatives"
+          },
+          {
+            "n": "nancy pelosi",
+            "t": "esquire",
+            "c": "saavedra pelosi goodwin & hermann"
+          }
+        ]
+      }
+    ],
+    "rows": []
+  }
+]
