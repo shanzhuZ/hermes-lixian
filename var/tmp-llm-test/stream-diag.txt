@@ -1,0 +1,561 @@
+event:status
+data:{"status":"running"}
+
+event:connected
+data:{"taskId":"task_1678eb6b596e49629b14b9e272563213","sessionId":"sess_17449320e6ae4db99d901994c5864b03"}
+
+event:tool.started
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "tool_name": "skill_view", "preview": "org-query-router", "args": {"name": "org-query-router"}, "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 3, "ts": 1793598120.0274174}
+
+event:tool.started
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "tool_name": "skill_view", "preview": "org-query-basic", "args": {"name": "org-query-basic"}, "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 4, "ts": 1793598120.0274174}
+
+event:tool.completed
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "tool_name": "skill_view", "preview": null, "args": null, "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 5, "ts": 1793598121.433678}
+
+event:tool.completed
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "tool_name": "skill_view", "preview": null, "args": null, "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 6, "ts": 1793598121.4376924}
+
+event:tool.started
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "tool_name": "mcp_org_mcp_search_orgs", "preview": null, "args": {"org_type": "智库", "location_country": "united states", "biz_tag": "涉华", "size": 20}, "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 7, "ts": 1793598126.7253497}
+
+event:tool.completed
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "tool_name": "mcp_org_mcp_search_orgs", "preview": null, "args": null, "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 8, "ts": 1793598127.142507}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "\n\n库", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 9, "ts": 1793598138.922127}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "中共命中 4", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 10, "ts": 1793598138.9231293}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "0 家", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 11, "ts": 1793598138.9241295}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "美国涉华智库", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 12, "ts": 1793598138.9241295}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "，", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 13, "ts": 1793598138.9251287}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "本", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 14, "ts": 1793598138.9261274}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "批返回", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 15, "ts": 1793598138.9559765}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " 20 ", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 16, "ts": 1793598139.0066156}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "家（涉", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 17, "ts": 1793598140.1028285}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "华标签", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 18, "ts": 1793598140.377186}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "已自动展开为", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 19, "ts": 1793598140.3816833}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " 政治", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 20, "ts": 1793598140.433634}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "/经济/科技", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 21, "ts": 1793598141.5247703}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "/军事/外交", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 22, "ts": 1793598141.5497694}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "/人权/台湾", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 23, "ts": 1793598141.5497694}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " 子标签），", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 24, "ts": 1793598141.5517747}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "还有 20", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 25, "ts": 1793598144.9737258}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " 家未", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 26, "ts": 1793598145.07482}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "拉", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 27, "ts": 1793598145.076819}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "取。先", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 28, "ts": 1793598145.1592312}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "列", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 29, "ts": 1793598145.1922636}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "本", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 30, "ts": 1793598145.197264}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "批里", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 31, "ts": 1793598145.20126}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "信号", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 32, "ts": 1793598145.5973527}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "可靠的", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 33, "ts": 1793598145.5983498}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "：\n\n高", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 34, "ts": 1793598145.5983498}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "置信、", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 35, "ts": 1793598145.6003633}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "确", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 36, "ts": 1793598145.6013546}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "属涉", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 37, "ts": 1793598145.603355}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "华研究", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 38, "ts": 1793598145.603355}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "类：\n-", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 39, "ts": 1793598145.6043587}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " China Aerospace Studies Institute", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 40, "ts": 1793598145.6043587}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " (", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 41, "ts": 1793598145.6648872}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "CASI) —", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 42, "ts": 1793598145.6668937}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " 美国", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 43, "ts": 1793598145.6678908}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "空军大学", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 44, "ts": 1793598145.668891}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "下属安全", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 45, "ts": 1793598145.668891}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "智库，专", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 46, "ts": 1793598145.6708908}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "研中国航空航天力量", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 47, "ts": 1793598145.671888}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "，涉", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 48, "ts": 1793598145.6738884}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "华+", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 49, "ts": 1793598145.6748893}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "军事，", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 50, "ts": 1793598145.6758916}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "置信 0.", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 51, "ts": 1793598145.6768866}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "9\n", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 52, "ts": 1793598145.6768866}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "- George H.", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 53, "ts": 1793598145.6794083}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " W. Bush Foundation", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 54, "ts": 1793598145.6824238}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " for U.S.-", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 55, "ts": 1793598145.683429}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "China Relations — ", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 56, "ts": 1793598145.684426}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "休斯顿/", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 57, "ts": 1793598145.6854281}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "奥斯汀，国际", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 58, "ts": 1793598145.6874251}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "关系类", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 59, "ts": 1793598145.6884236}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "，专注", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 60, "ts": 1793598145.6884236}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "中美关系，置信", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 61, "ts": 1793598145.71173}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " 0.9", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 62, "ts": 1793598145.7127264}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "\n- America China", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 63, "ts": 1793598145.7137275}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " Public Affairs Institute —", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 64, "ts": 1793598145.716727}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " 华盛顿特区", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 65, "ts": 1793598145.7187252}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "，中美", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 66, "ts": 1793598145.7197242}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "外交", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 67, "ts": 1793598145.7207246}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "/", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 68, "ts": 1793598145.721728}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "公共事务，置信", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 69, "ts": 1793598145.721728}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " 0.8", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 70, "ts": 1793598145.7227252}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "\n- Co", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 71, "ts": 1793598145.723724}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "resight Research —", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 72, "ts": 1793598145.723724}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " 纽约，零售", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 73, "ts": 1793598145.724722}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "科技", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 74, "ts": 1793598145.7257252}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "经济", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 75, "ts": 1793598145.7287264}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "研究", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 76, "ts": 1793598145.7297246}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "，对中国市场有", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 77, "ts": 1793598145.7297246}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "专", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 78, "ts": 1793598145.7307253}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "深", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 79, "ts": 1793598145.7317224}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "研究", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 80, "ts": 1793598145.733729}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "，置信 0", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 81, "ts": 1793598145.7347229}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": ".8\n-", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 82, "ts": 1793598145.7357237}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " Hudson Institute Political Studies", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 83, "ts": 1793598145.7357237}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " — 胡", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 84, "ts": 1793598145.7367234}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "德研究所政治", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 85, "ts": 1793598145.7377338}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "研究部，涉", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 86, "ts": 1793598145.740722}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "华政治", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 87, "ts": 1793598145.7417219}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "+台湾议题", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 88, "ts": 1793598145.7427244}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "\n", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 89, "ts": 1793598145.743724}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "- C", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 90, "ts": 1793598145.743724}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "-Insight Research", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 91, "ts": 1793598145.7447386}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " — 加州，", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 92, "ts": 1793598145.7467272}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "专注", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 93, "ts": 1793598145.7477229}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "中国市场", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 94, "ts": 1793598145.7477229}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "调研", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 95, "ts": 1793598145.7487237}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "（", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 96, "ts": 1793598145.7497244}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "经济", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 97, "ts": 1793598145.7527223}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "）", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 98, "ts": 1793598145.753724}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "\n- China Development", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 99, "ts": 1793598145.753724}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " Student Think Tank —", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 100, "ts": 1793598145.754726}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " 乔治城", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 101, "ts": 1793598145.7557266}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "/", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 102, "ts": 1793598145.7567222}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "乔治", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 103, "ts": 1793598145.7587292}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "华盛顿学生", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 104, "ts": 1793598145.7597258}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "智库，涉华", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 105, "ts": 1793598145.7677248}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "政治经济", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 106, "ts": 1793598145.7727199}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "\n- Global Investment", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 107, "ts": 1793598145.7787235}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " & Consulting — ", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 108, "ts": 1793598145.779723}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "维护", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 109, "ts": 1793598145.7967236}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "\"", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 110, "ts": 1793598145.8007226}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "中国全球投资追踪", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 111, "ts": 1793598145.8017228}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "器\"，", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 112, "ts": 1793598145.8037252}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "涉华经贸", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 113, "ts": 1793598145.8067257}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "\n\n", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 114, "ts": 1793598145.8087273}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "需要", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 115, "ts": 1793598145.8097289}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "留", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 116, "ts": 1793598145.8147242}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "意的噪声", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 117, "ts": 1793598147.2450469}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "（", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 118, "ts": 1793598147.2460375}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "库内类型", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 119, "ts": 1793598147.2510397}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "标注", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 120, "ts": 1793598147.25204}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "为", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 121, "ts": 1793598147.2550468}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "智库", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 122, "ts": 1793598147.2630413}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "但", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 123, "ts": 1793598147.2690396}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "实际", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 124, "ts": 1793598147.31991}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "不是", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 125, "ts": 1793598147.3229191}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "）", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 126, "ts": 1793598147.3239126}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "：\n- a", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 127, "ts": 1793598148.2926233}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "3t, ll", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 128, "ts": 1793598148.2936206}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "c（三角轮胎", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 129, "ts": 1793598148.295621}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "子公司）、dimtel", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 130, "ts": 1793598148.297619}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "（", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 131, "ts": 1793598148.2986202}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "台湾电信）、", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 132, "ts": 1793598149.5242887}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "ignite", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 133, "ts": 1793598149.5242887}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "hq（理财平台", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 134, "ts": 1793598149.5382833}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "）、gobi（", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 135, "ts": 1793598149.5412905}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "设计工作室）、brain", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 136, "ts": 1793598149.5422847}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "lids（洗", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 137, "ts": 1793598149.5422847}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "脑概念", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 138, "ts": 1793598149.5712852}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "研究）、", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 139, "ts": 1793598149.5722864}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "china", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 140, "ts": 1793598149.5722864}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " luxury advisors（奢侈品", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 141, "ts": 1793598149.5732825}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "咨询）、", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 142, "ts": 1793598149.5732825}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "ar", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 143, "ts": 1793598149.57428}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "lynch（描述", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 144, "ts": 1793598149.5752857}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "与", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 145, "ts": 1793598149.5772855}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "藏", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 146, "ts": 1793598149.5782847}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "南地区", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 147, "ts": 1793598149.5792842}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "混淆", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 148, "ts": 1793598149.5792842}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "）——", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 149, "ts": 1793598149.5792842}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "这几", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 150, "ts": 1793598149.580282}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "家", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 151, "ts": 1793598149.580282}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "建议排除", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 152, "ts": 1793598149.582291}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "\n\n", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 153, "ts": 1793598149.5842838}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "说明", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 154, "ts": 1793598149.5852854}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "：本批不是", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 155, "ts": 1793598149.5852854}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "全集，剩余", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 156, "ts": 1793598149.586284}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " 20 ", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 157, "ts": 1793598149.586284}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "家可", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 158, "ts": 1793598149.587282}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "继续翻页；", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 159, "ts": 1793598149.5902848}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "也没有", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 160, "ts": 1793598149.5902848}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "组织间", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 161, "ts": 1793598149.5912843}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "关系边和", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 162, "ts": 1793598149.5912843}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "事件时间", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 163, "ts": 1793598149.592282}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "轴。\n\n", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 164, "ts": 1793598149.6582832}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "要我", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 165, "ts": 1793598149.670285}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "继续翻页", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 166, "ts": 1793598149.7298515}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "拉取剩余", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 167, "ts": 1793598149.7903862}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " 20 ", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 168, "ts": 1793598150.958604}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "家，还是", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 169, "ts": 1793598151.363808}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "只看", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 170, "ts": 1793598151.3898268}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "某一", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 171, "ts": 1793598151.3918269}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "子类", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 172, "ts": 1793598151.3963628}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "（如", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 173, "ts": 1793598151.3983634}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "安全智库", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 174, "ts": 1793598151.5874643}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "、国际关系智库", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 175, "ts": 1793598151.6014674}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "、或", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 176, "ts": 1793598151.6024673}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "加", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 177, "ts": 1793598151.6124675}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " min_tag_confidence", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 178, "ts": 1793598151.7821417}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "=0.7", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 179, "ts": 1793598151.7831423}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "5", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 180, "ts": 1793598151.7841408}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": " 只", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 181, "ts": 1793598151.7841408}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "保留", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 182, "ts": 1793598151.7851343}
+
+event:assistant.delta
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "delta": "高置信）？", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 183, "ts": 1793598151.7861378}
+
+event:tool.progress
+data:{"message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "tool_name": "_thinking", "delta": "库中共命中 40 家美国涉华智库，本批返回 20 家（涉华标签已自动展开为 政治/经济/科技/军事/外交/人权/台湾 子标签），还有 20 家未拉取。先列本批里信号可靠的：\n\n高置信、确属涉华研究类：\n- China Aerospace Studies Institute (CASI) — 美国空军大学下属安全智库，专研中国航空航天力量，涉华+军事，置信 0.9\n- George H. W. Bush Foundation for U.S.-China Relations — 休斯顿/奥斯汀，国际关系类，专注中美关系，置信 0.9\n- America China Public Affairs Institute — 华盛顿特区，中美外交/公共事务，置信 0.8\n- Coresight Research — 纽约，零售科技经济研究，对中国市场有专深研究，置信 0.8\n- Hudson Institute Political Studies — 胡德研究所政治研究部，涉华政治+台湾议题\n- C-Insight Research — 加州，专注中国市场调研（经济）\n- China Devel", "session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 184, "ts": 1793598151.8031352}
+
+event:assistant.completed
+data:{"session_id": "api_1793598114_7ec4aa6f", "message_id": "msg_aa9d8ae1320e4d8bad84093a533f942b", "content": "库中共命中 40 家美国涉华智库，本批返回 20 家（涉华标签已自动展开为 政治/经济/科技/军事/外交/人权/台湾 子标签），还有 20 家未拉取。先列本批里信号可靠的：\n\n高置信、确属涉华研究类：\n- China Aerospace Studies Institute (CASI) — 美国空军大学下属安全智库，专研中国航空航天力量，涉华+军事，置信 0.9\n- George H. W. Bush Foundation for U.S.-China Relations — 休斯顿/奥斯汀，国际关系类，专注中美关系，置信 0.9\n- America China Public Affairs Institute — 华盛顿特区，中美外交/公共事务，置信 0.8\n- Coresight Research — 纽约，零售科技经济研究，对中国市场有专深研究，置信 0.8\n- Hudson Institute Political Studies — 胡德研究所政治研究部，涉华政治+台湾议题\n- C-Insight Research — 加州，专注中国市场调研（经济）\n- China Development Student Think Tank — 乔治城/乔治华盛顿学生智库，涉华政治经济\n- Global Investment & Consulting — 维护\"中国全球投资追踪器\"，涉华经贸\n\n需要留意的噪声（库内类型标注为智库但实际不是）：\n- a3t, llc（三角轮胎子公司）、dimtel（台湾电信）、ignitehq（理财平台）、gobi（设计工作室）、brainlids（洗脑概念研究）、china luxury advisors（奢侈品咨询）、arlynch（描述与藏南地区混淆）——这几家建议排除\n\n说明：本批不是全集，剩余 20 家可继续翻页；也没有组织间关系边和事件时间轴。\n\n要我继续翻页拉取剩余 20 家，还是只看某一子类（如安全智库、国际关系智库、或加 min_tag_confidence=0.75 只保留高置信）？", "completed": true, "partial": false, "interrupted": false, "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 185, "ts": 1793598151.8451402}
+
+event:done
+data:{"session_id": "api_1793598114_7ec4aa6f", "run_id": "run_8fe7c331c3014862a303812d1b77aa45", "seq": 187, "ts": 1793598151.8451402}
+
+event:stream_end
+data:{"ok":true}
+

@@ -1,8 +1,8 @@
----
+﻿---
 name: org-relation-query
 description: 离线组织库自然语言查询（兼容入口）。请优先按类型使用 org-query-router / basic / named / multiturn。触发词：组织查询、涉华智库、美国智库、军工企业、非政府组织、台在美团体、FAPA、业务标签、二级类型、org-relation-query。
 version: 0.3.0
-author: hermes-xw
+author: hermes-lixian
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

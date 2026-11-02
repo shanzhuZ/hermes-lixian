@@ -1,21 +1,55 @@
-# hermes-lixian 干净会话启动（HERMES_HOME 指向 var/hermes，运行时文件不污染仓库根）
+﻿# hermes-lixian launcher
+# - HERMES_HOME 必须指向本项目 var\hermes（配置/skills/.env）
+# - hermes.exe 优先用本仓库 hermes-agent\venv（可独立部署，不依赖 hermes-xa）
 $ErrorActionPreference = "Stop"
 $RepoRoot = $PSScriptRoot
 $RuntimeHome = Join-Path $RepoRoot "var\hermes"
+$LocalHermes = Join-Path $RepoRoot "hermes-agent\venv\Scripts\hermes.exe"
 
 if (-not (Test-Path $RuntimeHome)) {
-    Write-Host "首次运行，初始化 var\hermes ..."
+    Write-Host "First run: init var\hermes ..."
     & (Join-Path $RepoRoot "scripts\init-hermes-runtime.ps1")
 }
 
+# 每次启动强制覆盖，避免当前窗口残留其它项目的 HERMES_HOME
 $env:HERMES_HOME = $RuntimeHome
 Write-Host "HERMES_HOME=$env:HERMES_HOME"
-Write-Host "skills 目录:"
+
+# 解析 hermes.exe：HERMES_BIN > 本仓库 venv > PATH（不再默认落到 hermes-xa）
+$hermesExe = $null
+if ($env:HERMES_BIN -and (Test-Path $env:HERMES_BIN)) {
+    $hermesExe = $env:HERMES_BIN
+    Write-Host "HERMES_BIN(env)=$hermesExe"
+} elseif (Test-Path $LocalHermes) {
+    $hermesExe = $LocalHermes
+} else {
+    $cmd = Get-Command hermes -ErrorAction SilentlyContinue
+    if ($cmd) { $hermesExe = $cmd.Source }
+}
+
+if (-not $hermesExe) {
+    throw @"
+本仓库尚未安装 hermes CLI。请先执行：
+  cd D:\hermes-lixian\hermes-agent
+  python -m venv venv
+  .\venv\Scripts\python.exe -m pip install -U pip
+  .\venv\Scripts\pip.exe install -e .
+然后再运行: .\chat.ps1 gateway
+或设置 HERMES_BIN 指向本仓库的 hermes.exe。
+"@
+}
+
+Write-Host "HERMES_BIN=$hermesExe"
+Write-Host "skills:"
 Get-ChildItem (Join-Path $env:HERMES_HOME "skills") -Directory -ErrorAction SilentlyContinue | ForEach-Object { $_.Name }
 
-# 优先用 PATH 里的 hermes；也可改成 hermes-agent 虚拟环境里的入口
-$hermes = Get-Command hermes -ErrorAction SilentlyContinue
-if (-not $hermes) {
-    throw "未找到 hermes 命令。请先安装 hermes-agent，或把 hermes 加入 PATH。"
+# 同步根目录最新 config / .env / SOUL 到运行时（避免只改了仓库根却仍用旧配置）
+Copy-Item -Force (Join-Path $RepoRoot "config.yaml") (Join-Path $RuntimeHome "config.yaml")
+if (Test-Path (Join-Path $RepoRoot ".env")) {
+    Copy-Item -Force (Join-Path $RepoRoot ".env") (Join-Path $RuntimeHome ".env")
 }
-& hermes @args
+if (Test-Path (Join-Path $RepoRoot "SOUL.md")) {
+    Copy-Item -Force (Join-Path $RepoRoot "SOUL.md") (Join-Path $RuntimeHome "SOUL.md")
+}
+
+& $hermesExe @args

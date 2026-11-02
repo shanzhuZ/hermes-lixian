@@ -34,7 +34,7 @@ ES_PASSWORD = os.environ.get("ES_PASSWORD", "")
 ORG_INDEX_NAME = os.environ.get("ORG_INDEX", ORG_INDEX)
 
 DEFAULT_SIZE = 20
-MAX_SIZE = 20
+MAX_SIZE = 1000
 MAX_HITS_GUARD = 10000
 INCLUDE_IDS_MAX = 500
 ORG_SEARCH_SORT = [{"org_id": "asc"}, {"_id": "asc"}]

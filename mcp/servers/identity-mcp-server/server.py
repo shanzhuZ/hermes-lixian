@@ -176,7 +176,7 @@ async def list_tools() -> list[Tool]:
                 "search_after 分页攒池。"
                 f"\n索引: {IDENTITY_INDEX}"
                 "\n返回含 education_brief/experience_brief/evidence_flags；已去掉 skills 等大字段。"
-                "\nsize 最大 20；include_ids 最多 500。"
+                "\nsize 由模型决定，最大 1000（默认 20）；include_ids 最多 500。"
                 "\n分页：若 has_more=true，把 next_search_after 原样传入下一轮 search_after。"
                 "\n行业词默认只匹配当前 industry 字段；location_country 默认只匹配现居。"
                 "\n过宽时 is_sample=true；include_ids 时以 returned/candidate_pool_size 为准。"
@@ -288,15 +288,15 @@ async def list_tools() -> list[Tool]:
                         "type": "array",
                         "description": (
                             "分页游标：上一页返回的 next_search_after 原样传入；"
-                            "用于翻页合并 unique_id（每页仍最多 20 条）"
+                            "用于翻页合并 unique_id（每页条数由 size 决定，最大 1000）"
                         ),
                     },
                     "size": {
                         "type": "integer",
-                        "description": "返回条数（search_persons 最大 20）",
+                        "description": "返回条数（由模型决定，最大 1000，默认 20）",
                         "default": 20,
                         "minimum": 1,
-                        "maximum": 20,
+                        "maximum": 1000,
                     },
                 },
             },

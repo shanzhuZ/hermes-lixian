@@ -1,8 +1,8 @@
----
+﻿---
 name: org-query-common
 description: 组织查询共用约定与参数说明（被其它 org-query-* 引用）。一般不单独触发；需要查阅工具参数、证据字段、输出格式、V1 边界时使用。触发词：org-query-common、组织查询共用约定。
 version: 0.1.0
-author: hermes-xw
+author: hermes-lixian
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

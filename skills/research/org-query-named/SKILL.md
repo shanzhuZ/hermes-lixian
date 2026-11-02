@@ -1,8 +1,8 @@
----
+﻿---
 name: org-query-named
 description: 具名组织查询与消歧：按名称/缩写定位单组织画像，处理同名噪声与库内未收录。触发词：FAPA、Brookings、Lockheed、某组织是什么、lookup_org_by_name、org-query-named。
 version: 0.1.0
-author: hermes-xw
+author: hermes-lixian
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

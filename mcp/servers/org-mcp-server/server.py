@@ -31,10 +31,10 @@ server = Server("org-mcp")
 
 _SIZE_PROP = {
     "type": "integer",
-    "description": "返回条数（最大 20）",
+    "description": "返回条数（由模型决定，最大 1000，默认 20）",
     "default": 20,
     "minimum": 1,
-    "maximum": 20,
+    "maximum": 1000,
 }
 
 

@@ -1,6 +1,11 @@
-# MCP（hermes-xw）
+# MCP（hermes-lixian）
 
-本目录只放 **MCP Server 源码** 与 **连接配置**，不含画像路由、Hook、入库脚本。
+本目录只放 **MCP Server 源码** 与 **连接配置**。
+
+当前仅注册：
+
+- `identity-mcp`：人员检索
+- `org-mcp`：组织检索
 
 详见上级 [README.md](../README.md)。
 

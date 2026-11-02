@@ -1,0 +1,42 @@
+server:
+  port: 8088
+  tomcat:
+    # 流式问答可能较长，避免 Tomcat 过早断开
+    connection-timeout: 1800000
+
+graphiql:
+  enabled: true
+
+spring:
+  application:
+    name: lixian-chat
+  autoconfigure:
+    exclude:
+      # 使用与 aw 相同的自定义 RestHighLevelClient，关闭 Boot 默认 ES 自动配置
+      - org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchRestClientAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchDataAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.elasticsearch.ReactiveElasticsearchRepositoriesAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchRepositoriesAutoConfiguration
+
+# Hermes API Server（Java → Hermes 仍用 key；对外接口暂不鉴权）
+hermes:
+  base-url: http://127.0.0.1:8642
+  api-key: change-me-local-dev
+  connect-timeout-ms: 10000
+  # 单次对话读超时（含工具调用）
+  read-timeout-ms: 1800000
+
+# ES（与 aw 一致）
+es:
+  host: 192.168.3.226
+  port: 9201
+  scheme: https
+  username: elastic
+  password: i7Smzj2wVUndynjJXXv76A==
+  connect-timeout: 10000
+  socket-timeout: 600000
+  index: sz_lixian_xw
+
+logging:
+  level:
+    com.example.lixian: INFO

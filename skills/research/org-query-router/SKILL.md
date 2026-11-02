@@ -1,8 +1,8 @@
----
+﻿---
 name: org-query-router
 description: 离线组织库查询总路由：根据问题类型选择 basic / named / multiturn。触发词：组织查询、涉华智库、美国智库、军工企业、非政府组织、台在美团体、FAPA、业务标签、二级类型、org-query-router、org-relation-query。
 version: 0.1.0
-author: hermes-xw
+author: hermes-lixian
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

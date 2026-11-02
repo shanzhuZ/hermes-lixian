@@ -1,0 +1,27 @@
+data: {"id": "chatcmpl-14cfc77a195e4a9f90695f5bf1ba0", "object": "chat.completion.chunk", "created": 1793602210, "model": "hermes-agent", "choices": [{"index": 0, "delta": {"role": "assistant"}, "finish_reason": null}]}
+
+: keepalive
+
+: keepalive
+
+data: {"id": "chatcmpl-14cfc77a195e4a9f90695f5bf1ba0", "object": "chat.completion.chunk", "created": 1793602210, "model": "hermes-agent", "choices": [{"index": 0, "delta": {"content": "\u8d28\u6570\u662f"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-14cfc77a195e4a9f90695f5bf1ba0", "object": "chat.completion.chunk", "created": 1793602210, "model": "hermes-agent", "choices": [{"index": 0, "delta": {"content": "\u5927\u4e8e "}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-14cfc77a195e4a9f90695f5bf1ba0", "object": "chat.completion.chunk", "created": 1793602210, "model": "hermes-agent", "choices": [{"index": 0, "delta": {"content": "1 \u7684\u81ea\u7136"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-14cfc77a195e4a9f90695f5bf1ba0", "object": "chat.completion.chunk", "created": 1793602210, "model": "hermes-agent", "choices": [{"index": 0, "delta": {"content": "\u6570\uff0c\u9664\u4e86"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-14cfc77a195e4a9f90695f5bf1ba0", "object": "chat.completion.chunk", "created": 1793602210, "model": "hermes-agent", "choices": [{"index": 0, "delta": {"content": " 1 \u548c"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-14cfc77a195e4a9f90695f5bf1ba0", "object": "chat.completion.chunk", "created": 1793602210, "model": "hermes-agent", "choices": [{"index": 0, "delta": {"content": "\u5b83\u672c\u8eab\u4e4b\u5916"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-14cfc77a195e4a9f90695f5bf1ba0", "object": "chat.completion.chunk", "created": 1793602210, "model": "hermes-agent", "choices": [{"index": 0, "delta": {"content": "\u6ca1\u6709\u5176\u4ed6"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-14cfc77a195e4a9f90695f5bf1ba0", "object": "chat.completion.chunk", "created": 1793602210, "model": "hermes-agent", "choices": [{"index": 0, "delta": {"content": "\u56e0\u6570"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-14cfc77a195e4a9f90695f5bf1ba0", "object": "chat.completion.chunk", "created": 1793602210, "model": "hermes-agent", "choices": [{"index": 0, "delta": {"content": "\u3002"}, "finish_reason": null}]}
+
+data: {"id": "chatcmpl-14cfc77a195e4a9f90695f5bf1ba0", "object": "chat.completion.chunk", "created": 1793602210, "model": "hermes-agent", "choices": [{"index": 0, "delta": {}, "finish_reason": "stop"}], "usage": {"prompt_tokens": 22015, "completion_tokens": 275, "total_tokens": 22290}}
+
+data: [DONE]

@@ -555,6 +555,49 @@ class TestStreamingCallbacks:
         # Content is still accumulated in the response
         assert response.choices[0].message.content == "thinking... more text"
 
+    @patch("run_agent.AIAgent._create_request_openai_client")
+    @patch("run_agent.AIAgent._close_request_openai_client")
+    def test_api_server_routes_suppressed_text_to_reasoning(self, mock_close, mock_create):
+        """api_server 工具轮次规划文本走 reasoning_callback，便于 reasoning.delta 流式推送。"""
+        from run_agent import AIAgent
+
+        chunks = [
+            _make_stream_chunk(content="thinking..."),
+            _make_stream_chunk(tool_calls=[
+                _make_tool_call_delta(index=0, tc_id="call_abc", name="read_file")
+            ]),
+            _make_stream_chunk(content=" more text"),
+            _make_stream_chunk(finish_reason="tool_calls"),
+        ]
+
+        deltas = []
+        reasoning = []
+
+        mock_client = MagicMock()
+        mock_client.chat.completions.create.return_value = iter(chunks)
+        mock_create.return_value = mock_client
+
+        agent = AIAgent(
+            api_key="test-key",
+            base_url="https://openrouter.ai/api/v1",
+            model="test/model",
+            quiet_mode=True,
+            skip_context_files=True,
+            skip_memory=True,
+            platform="api_server",
+            stream_delta_callback=lambda t: deltas.append(t),
+            reasoning_callback=lambda t: reasoning.append(t),
+        )
+        agent.api_mode = "chat_completions"
+        agent._interrupt_requested = False
+
+        response = agent._interruptible_streaming_api_call({})
+
+        assert "thinking..." in deltas
+        assert " more text" not in deltas
+        assert reasoning == [" more text"]
+        assert response.choices[0].message.content == "thinking... more text"
+
 
 # ── Test: Streaming Fallback ────────────────────────────────────────────
 

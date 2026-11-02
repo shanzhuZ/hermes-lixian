@@ -1,8 +1,8 @@
----
+﻿---
 name: person-query-router
 description: 离线人员库查询总路由：根据问题类型选择 basic / exclude-or / multiturn / public-figure。触发词：人员查询、涉华人员、涉台人员、涉港人员、人员关系查询、业务标签查询、person-query-router、person-relation-tag-query。
 version: 0.1.0
-author: hermes-xw
+author: hermes-lixian
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

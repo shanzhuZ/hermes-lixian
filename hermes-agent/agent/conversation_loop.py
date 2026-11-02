@@ -4148,14 +4148,16 @@ def run_conversation(
 
             # Notify progress callback of model's thinking (used by subagent
             # delegation to relay the child's reasoning to the parent display).
-            if (assistant_message.content and agent.tool_progress_callback):
-                _think_text = assistant_message.content.strip()
-                # Strip reasoning XML tags that shouldn't leak to parent display
-                _think_text = re.sub(
-                    r'</?(?:REASONING_SCRATCHPAD|think|reasoning)>', '', _think_text
-                ).strip()
-                # For subagents: relay first line to parent display (existing behaviour).
-                # For all agents with a structured callback: emit reasoning.available event.
+            # 优先用结构化 reasoning_content，禁止把最终回答 content 当思考回灌。
+            if agent.tool_progress_callback and not getattr(agent, "_reasoning_deltas_sent", False):
+                _think_text = (agent._extract_reasoning(assistant_message) or "").strip()
+                if not _think_text and getattr(agent, "_delegate_depth", 0) > 0:
+                    # 子代理兜底：仍可用 content 首行做进度提示
+                    _raw = (assistant_message.content or "").strip()
+                    _raw = re.sub(
+                        r'</?(?:REASONING_SCRATCHPAD|think|reasoning)>', '', _raw
+                    ).strip()
+                    _think_text = _raw
                 first_line = _think_text.split('\n')[0][:80] if _think_text else ""
                 if first_line and getattr(agent, '_delegate_depth', 0) > 0:
                     try:
@@ -4164,7 +4166,11 @@ def run_conversation(
                         pass
                 elif _think_text:
                     try:
-                        agent.tool_progress_callback("reasoning.available", "_thinking", _think_text[:500], None)
+                        agent.tool_progress_callback(
+                            "reasoning.available", "_thinking", _think_text, None
+                        )
+                        # 与 reasoning_callback 路径互斥，避免整段思考推两次
+                        agent._reasoning_deltas_sent = True
                     except Exception:
                         pass
             

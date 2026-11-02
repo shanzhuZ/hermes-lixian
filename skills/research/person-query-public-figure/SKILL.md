@@ -1,8 +1,8 @@
----
+﻿---
 name: person-query-public-figure
 description: 人员库公众人物/民选政客查询：禁止用 senator 等词群体捞人；外部名单或联网候选后 lookup 核验。触发词：政客、参议员、议员、国会议员、明星、公众人物、民选官员、person-query-public-figure。
 version: 0.1.0
-author: hermes-xw
+author: hermes-lixian
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

@@ -1,0 +1,1 @@
+{"model":"DeepSeek-R1-Distill-Llama-70B","messages":[{"role":"user","content":"查询美国涉华智库"}],"tools":[{"type":"function","function":{"name":"search_orgs","description":"search orgs","parameters":{"type":"object","properties":{"q":{"type":"string"}}}}}],"tool_choice":"auto","stream":true,"max_tokens":128}

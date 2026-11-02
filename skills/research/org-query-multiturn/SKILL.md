@@ -1,8 +1,8 @@
----
+﻿---
 name: org-query-multiturn
 description: 组织库多轮与分页：其中/这些组织二次筛选、search_after 攒池、include_ids 收窄。触发词：其中、这些组织、再筛选、继续、翻页、二次查询、include_ids、search_after、org-query-multiturn。
 version: 0.1.0
-author: hermes-xw
+author: hermes-lixian
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
@@ -36,7 +36,7 @@ metadata:
 
 ## 分页攒池
 
-1. 同条件 `size=20`，记下全部 `org_id`  
+1. 同条件按需设 `size`（最大 1000），记下全部 `org_id`  
 2. `has_more=true` 时带 `search_after=next_search_after` 继续拉  
 3. 合并去重，够用即停（≤500）  
 4. 再用 `include_ids=合并池` + 新条件收窄  

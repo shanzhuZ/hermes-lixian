@@ -4672,6 +4672,8 @@ class AIAgent:
         if cb is not None:
             try:
                 cb(text)
+                if text:
+                    self._reasoning_deltas_sent = True
             except Exception:
                 pass
 

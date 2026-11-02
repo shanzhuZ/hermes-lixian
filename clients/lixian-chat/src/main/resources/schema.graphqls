@@ -1,0 +1,14 @@
+scalar Object
+
+type Result {
+    code: Int
+    message: String
+    totalCount: Int
+    totalPage: Int
+    records: Object
+}
+
+type Query {
+    # 问答历史分页查询（ES: sz_lixian_xw）
+    getChatHistory(userId: String, sessionId: String, taskId: String, keyword: String, pageNo: Int, pageSize: Int): Result
+}

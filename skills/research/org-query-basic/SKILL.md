@@ -1,8 +1,8 @@
----
+﻿---
 name: org-query-basic
 description: 组织库基础筛选与 AND 组合：一级/二级类型、业务标签（涉华展开）、国家地区、行业议题。触发词：美国涉华智库、军工企业、非政府组织、台在美团体、半导体、org-query-basic。
 version: 0.1.0
-author: hermes-xw
+author: hermes-lixian
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

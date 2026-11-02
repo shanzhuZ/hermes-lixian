@@ -1,0 +1,35 @@
+event: run.started
+data: {"user_message": {"role": "user", "content": "用一句话解释什么是质数。先在心里想一步再答。"}, "session_id": "api_1793602090_6fe726d3", "run_id": "run_858a016bf962470381e2646a33775956", "seq": 1, "ts": 1793602090.6204753}
+
+event: message.started
+data: {"message": {"id": "msg_ce25638631934018bf33a5ec508926fc", "role": "assistant"}, "session_id": "api_1793602090_6fe726d3", "run_id": "run_858a016bf962470381e2646a33775956", "seq": 2, "ts": 1793602090.6204753}
+
+event: assistant.delta
+data: {"message_id": "msg_ce25638631934018bf33a5ec508926fc", "delta": "质数是大于 ", "session_id": "api_1793602090_6fe726d3", "run_id": "run_858a016bf962470381e2646a33775956", "seq": 3, "ts": 1793602100.2188196}
+
+event: assistant.delta
+data: {"message_id": "msg_ce25638631934018bf33a5ec508926fc", "delta": "1 的自然数", "session_id": "api_1793602090_6fe726d3", "run_id": "run_858a016bf962470381e2646a33775956", "seq": 4, "ts": 1793602100.2368884}
+
+event: assistant.delta
+data: {"message_id": "msg_ce25638631934018bf33a5ec508926fc", "delta": "中，除了 ", "session_id": "api_1793602090_6fe726d3", "run_id": "run_858a016bf962470381e2646a33775956", "seq": 5, "ts": 1793602100.2720156}
+
+event: assistant.delta
+data: {"message_id": "msg_ce25638631934018bf33a5ec508926fc", "delta": "1 和它", "session_id": "api_1793602090_6fe726d3", "run_id": "run_858a016bf962470381e2646a33775956", "seq": 6, "ts": 1793602100.2990153}
+
+event: assistant.delta
+data: {"message_id": "msg_ce25638631934018bf33a5ec508926fc", "delta": "本身以外没有其他", "session_id": "api_1793602090_6fe726d3", "run_id": "run_858a016bf962470381e2646a33775956", "seq": 7, "ts": 1793602100.3697217}
+
+event: assistant.delta
+data: {"message_id": "msg_ce25638631934018bf33a5ec508926fc", "delta": "因数的数。", "session_id": "api_1793602090_6fe726d3", "run_id": "run_858a016bf962470381e2646a33775956", "seq": 8, "ts": 1793602100.4229188}
+
+event: tool.progress
+data: {"message_id": "msg_ce25638631934018bf33a5ec508926fc", "tool_name": "_thinking", "delta": "质数是大于 1 的自然数中，除了 1 和它本身以外没有其他因数的数。", "session_id": "api_1793602090_6fe726d3", "run_id": "run_858a016bf962470381e2646a33775956", "seq": 9, "ts": 1793602100.502097}
+
+event: assistant.completed
+data: {"session_id": "api_1793602090_6fe726d3", "message_id": "msg_ce25638631934018bf33a5ec508926fc", "content": "质数是大于 1 的自然数中，除了 1 和它本身以外没有其他因数的数。", "completed": true, "partial": false, "interrupted": false, "run_id": "run_858a016bf962470381e2646a33775956", "seq": 10, "ts": 1793602100.529398}
+
+event: run.completed
+data: {"session_id": "api_1793602090_6fe726d3", "message_id": "msg_ce25638631934018bf33a5ec508926fc", "completed": true, "interrupted": false, "messages": [{"role": "assistant", "content": "质数是大于 1 的自然数中，除了 1 和它本身以外没有其他因数的数。", "finish_reason": "stop", "reasoning": "The user is asking for a one-sentence explanation of what a prime number is in Chinese. They said \"先在心里想一步再答\" (think it through once in your head before answering). This is a simple knowledge question, no tools needed.\n\nLet me think it through: a prime number is a natural number greater than 1 whose only positive divisors are 1 and itself. So the one-sentence explanation in Chinese is: 质数是大于1的自然数中，除了1和它本身以外不再有其他因数的数。\n\nKeep it concise, plain text, no formatting.\n", "reasoning_content": "The user is asking for a one-sentence explanation of what a prime number is in Chinese. They said \"先在心里想一步再答\" (think it through once in your head before answering). This is a simple knowledge question, no tools needed.\n\nLet me think it through: a prime number is a natural number greater than 1 whose only positive divisors are 1 and itself. So the one-sentence explanation in Chinese is: 质数是大于1的自然数中，除了1和它本身以外不再有其他因数的数。\n\nKeep it concise, plain text, no formatting.\n"}], "usage": {"input_tokens": 21949, "output_tokens": 149, "total_tokens": 22098}, "run_id": "run_858a016bf962470381e2646a33775956", "seq": 11, "ts": 1793602100.529398}
+
+event: done
+data: {"session_id": "api_1793602090_6fe726d3", "run_id": "run_858a016bf962470381e2646a33775956", "seq": 12, "ts": 1793602100.529398}

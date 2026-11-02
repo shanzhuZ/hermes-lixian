@@ -1,8 +1,8 @@
----
+﻿---
 name: person-relation-tag-query
 description: 【兼容入口】人员库查询已拆分为 person-query-router 及专项 skill。触发词仍可用：涉华人员、涉台人员、涉港人员、人员关系查询、业务标签查询、person-relation-tag-query。请按 router 选型执行。
 version: 0.4.0
-author: hermes-xw
+author: hermes-lixian
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

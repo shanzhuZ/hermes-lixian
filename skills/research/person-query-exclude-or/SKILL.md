@@ -1,8 +1,8 @@
----
+﻿---
 name: person-query-exclude-or
 description: 人员库逻辑条件：NOT 排除、OR 满足任一、条件替换（不要A改看B）。触发词：排除、不要在华教育、不要退休、满足任一、或者、不要政客改高管、condition_logic、person-query-exclude-or。
 version: 0.1.0
-author: hermes-xw
+author: hermes-lixian
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

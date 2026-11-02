@@ -1,0 +1,156 @@
+event:status
+data:{"status":"running"}
+
+event:connected
+data:{"taskId":"task_525136a85d714012a2a070dd352240a7","sessionId":"sess_7a77cd3882fb4f3fa2b9e04827da7248"}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "你好！", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 3, "ts": 1793589904.6132042}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "我是 Hermes Agent，", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 4, "ts": 1793589904.614203}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "由 Nous Research ", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 5, "ts": 1793589904.6212127}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "打造的", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 6, "ts": 1793589904.6232195}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": " AI 助手。", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 7, "ts": 1793589904.6232195}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "\n\n我可以", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 8, "ts": 1793589904.6242177}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "帮你做很多事情", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 9, "ts": 1793589904.6457589}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "，比如：\n\n", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 10, "ts": 1793589904.6467614}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "- 回答", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 11, "ts": 1793589904.6577563}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "问题和提供", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 12, "ts": 1793589904.7315125}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "分析", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 13, "ts": 1793589904.7950718}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "\n- 编写", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 14, "ts": 1793589904.863981}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "、", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 15, "ts": 1793589904.93103}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "审查", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 16, "ts": 1793589905.0217035}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "和调试", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 17, "ts": 1793589905.0691364}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "代码\n- ", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 18, "ts": 1793589905.1371272}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "搜索网络", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 19, "ts": 1793589905.223015}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "信息、读取", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 20, "ts": 1793589905.2820008}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "网页内容\n-", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 21, "ts": 1793589906.080331}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": " 查询", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 22, "ts": 1793589907.1272964}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "身份", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 23, "ts": 1793589907.1293018}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "库和组织库（", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 24, "ts": 1793589907.131289}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "查", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 25, "ts": 1793589907.1332886}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "人、查", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 26, "ts": 1793589907.1342885}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "机构", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 27, "ts": 1793589907.1352954}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "、涉华人员", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 28, "ts": 1793589907.1352954}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "/", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 29, "ts": 1793589907.1874843}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "智库", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 30, "ts": 1793589907.2760255}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "等）\n-", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 31, "ts": 1793589907.3365734}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": " 操作", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 32, "ts": 1793589907.8035865}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "文件、执行", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 33, "ts": 1793589908.1597555}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "终端", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 34, "ts": 1793589908.1607518}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "命令、管理项目", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 35, "ts": 1793589908.1627567}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "\n- 处理", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 36, "ts": 1793589908.1637602}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "文档（", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 37, "ts": 1793589908.1637602}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "PDF、Word、", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 38, "ts": 1793589908.1647522}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "Excel、P", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 39, "ts": 1793589908.1767507}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "PT ", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 40, "ts": 1793589908.1777585}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "等）\n-", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 41, "ts": 1793589908.1787615}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": " 定时", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 42, "ts": 1793589908.179753}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "任务和", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 43, "ts": 1793589908.1807551}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "自动化工作", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 44, "ts": 1793589908.2433457}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "流", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 45, "ts": 1793589908.3106294}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "\n\n有什么", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 46, "ts": 1793589908.3885612}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "我可以帮", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 47, "ts": 1793589908.439636}
+
+event:assistant.delta
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "delta": "你的吗？", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 48, "ts": 1793589908.51909}
+
+event:tool.progress
+data:{"message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "tool_name": "_thinking", "delta": "你好！我是 Hermes Agent，由 Nous Research 打造的 AI 助手。\n\n我可以帮你做很多事情，比如：\n\n- 回答问题和提供分析\n- 编写、审查和调试代码\n- 搜索网络信息、读取网页内容\n- 查询身份库和组织库（查人、查机构、涉华人员/智库等）\n- 操作文件、执行终端命令、管理项目\n- 处理文档（PDF、Word、Excel、PPT 等）\n- 定时任务和自动化工作流\n\n有什么我可以帮你的吗？", "session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 49, "ts": 1793589908.550087}
+
+event:assistant.completed
+data:{"session_id": "api_1793589900_33917714", "message_id": "msg_29d4e8dac3dd4b5e90575683a8641808", "content": "你好！我是 Hermes Agent，由 Nous Research 打造的 AI 助手。\n\n我可以帮你做很多事情，比如：\n\n- 回答问题和提供分析\n- 编写、审查和调试代码\n- 搜索网络信息、读取网页内容\n- 查询身份库和组织库（查人、查机构、涉华人员/智库等）\n- 操作文件、执行终端命令、管理项目\n- 处理文档（PDF、Word、Excel、PPT 等）\n- 定时任务和自动化工作流\n\n有什么我可以帮你的吗？", "completed": true, "partial": false, "interrupted": false, "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 50, "ts": 1793589908.5700915}
+
+event:done
+data:{"session_id": "api_1793589900_33917714", "run_id": "run_7d5a0c61ccf9441e89a90366fc9d189b", "seq": 52, "ts": 1793589908.5700915}
+
+event:stream_end
+data:{"ok":true}
+

@@ -68,8 +68,8 @@ _SENSITIVE_TOP_KEYS = {"associated_epi", "query"}
 _EDU_BRIEF_MAX = 6
 _EXP_BRIEF_MAX = 6
 _SUMMARY_MAX_CHARS = 280
-# search_persons 专用上限：单条含 skills 时 size=40 约 128k 字符会截断丢 unique_id
-SEARCH_PERSONS_MAX_SIZE = 20
+# search_persons 单次返回上限（由模型传 size；过大时工具输出可能被截断，需自行权衡）
+SEARCH_PERSONS_MAX_SIZE = 1000
 # 二次筛选白名单上限（配合 search_after 分页攒池）
 INCLUDE_IDS_MAX = 500
 # 人员结构化检索分页排序（与 collapse 字段一致）

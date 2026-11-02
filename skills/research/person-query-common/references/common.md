@@ -31,7 +31,7 @@
 | `condition_logic` | `and`（默认）/ `or`（业务·经历·机构·行业·职位满足任一） |
 | `search_after` | 上一页 `next_search_after` |
 | `strict` | 关弱信号；仅 biz_tag 过宽会被拒绝 |
-| `size` | **最大 20** |
+| `size` | 由模型按需填写，**最大 1000**（默认 20；过大可能触发工具输出截断） |
 
 ## 证据与交付
 

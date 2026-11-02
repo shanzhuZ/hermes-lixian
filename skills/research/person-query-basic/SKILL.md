@@ -1,8 +1,8 @@
----
+﻿---
 name: person-query-basic
 description: 人员库基础筛选与 AND 组合：涉华/台/港推导、在华港台教育或工作、现居、公司学校、行业职位。触发词：在华教育、在华工作、涉华人员、涉台、涉港、高通人员、现居美国、person-query-basic。
 version: 0.1.0
-author: hermes-xw
+author: hermes-lixian
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

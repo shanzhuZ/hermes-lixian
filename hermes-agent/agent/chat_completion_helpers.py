@@ -900,17 +900,11 @@ def build_assistant_message(agent, assistant_message, finish_reason: str) -> dic
         logging.debug(f"Captured reasoning ({len(reasoning_text)} chars): {reasoning_text}")
 
     if reasoning_text and agent.reasoning_callback:
-        # Skip callback when streaming is active — reasoning was already
-        # displayed during the stream via one of two paths:
-        #   (a) _fire_reasoning_delta (structured reasoning_content deltas)
-        #   (b) _stream_delta tag extraction (<think>/<REASONING_SCRATCHPAD>)
-        # When streaming is NOT active, always fire so non-streaming modes
-        # (gateway, batch, quiet) still get reasoning.
-        # Any reasoning that wasn't shown during streaming is caught by the
-        # CLI post-response display fallback (cli.py _reasoning_shown_this_turn).
-        if not agent.stream_delta_callback and not agent._stream_callback:
+        # 本轮尚未推过思考时整段补发一次（上游常不吐 reasoning_content 增量）。
+        # 已通过流式 delta / reasoning.available 推过则跳过，防重复。
+        if not getattr(agent, "_reasoning_deltas_sent", False):
             try:
-                agent.reasoning_callback(reasoning_text)
+                agent._fire_reasoning_delta(reasoning_text)
             except Exception:
                 pass
 
@@ -1779,6 +1773,9 @@ def interruptible_streaming_api_call(agent, api_kwargs: dict, *, on_first_delta=
     if agent._interrupt_requested:
         raise InterruptedError("Agent interrupted before streaming API call")
 
+    # 每轮 API 调用重置，避免上一轮的流式思考标记压掉本轮 fallback
+    agent._reasoning_deltas_sent = False
+
     if agent.api_mode == "codex_responses":
         # Codex streams internally via _run_codex_stream. The main dispatch
         # in _interruptible_api_call already calls it; we just need to
@@ -2165,6 +2162,19 @@ def interruptible_streaming_api_call(agent, api_kwargs: dict, *, on_first_delta=
                 # reasoning display.  Non-reasoning text is harmlessly
                 # suppressed by the CLI's _stream_delta when the stream
                 # box is already closed (tool boundary flush).
+                #
+                # api_server: 工具轮次的规划文本改走 reasoning_callback，
+                # 以便 SSE 以 reasoning.delta 流式推送「思考」，而不是
+                # 混进 assistant.delta 或事后整段 tool.progress。
+                elif (
+                    getattr(agent, "platform", None) == "api_server"
+                    and agent.reasoning_callback
+                ):
+                    try:
+                        agent._fire_reasoning_delta(delta.content)
+                        agent._record_streamed_assistant_text(delta.content)
+                    except Exception:
+                        pass
                 elif agent.stream_delta_callback:
                     try:
                         agent.stream_delta_callback(delta.content)

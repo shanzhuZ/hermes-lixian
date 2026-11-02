@@ -1,0 +1,184 @@
+event: run.started
+data: {"user_message": {"role": "user", "content": "用一句话解释什么是质数。先在心里想一步再答。"}, "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 1, "ts": 1793604931.830886}
+
+event: message.started
+data: {"message": {"id": "msg_66bede0426574dd69cb235e490659101", "role": "assistant"}, "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 2, "ts": 1793604931.830886}
+
+: keepalive
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "The", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 3, "ts": 1793604977.0127378}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " user is asking me", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 4, "ts": 1793604977.013736}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " to explain what a", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 5, "ts": 1793604977.014745}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " prime number is in", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 6, "ts": 1793604977.0177462}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " a", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 7, "ts": 1793604977.0187402}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " single sentence.", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 8, "ts": 1793604977.0187402}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " And", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 9, "ts": 1793604977.0197368}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " they want", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 10, "ts": 1793604977.0317688}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " me to think it", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 11, "ts": 1793604977.0885327}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " through in", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 12, "ts": 1793604977.406455}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " my head first.", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 13, "ts": 1793604977.7968028}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "\n\nLet me think", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 14, "ts": 1793604977.849801}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": ":", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 15, "ts": 1793604978.2777524}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " A", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 16, "ts": 1793604978.3547497}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " prime number is a", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 17, "ts": 1793604978.3697448}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " natural number greater than", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 18, "ts": 1793604978.370749}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " 1 that", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 19, "ts": 1793604978.370749}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " has only two", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 20, "ts": 1793604978.4668312}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " factors", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 21, "ts": 1793604978.4678292}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": ", ", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 22, "ts": 1793604978.5244193}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "1 and itself.", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 23, "ts": 1793604978.7873204}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " It", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 24, "ts": 1793604978.8650753}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " cannot be expressed", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 25, "ts": 1793604978.8740723}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " as the", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 26, "ts": 1793604978.8780794}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " product of two smaller", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 27, "ts": 1793604978.9171243}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " natural numbers. Examples", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 28, "ts": 1793604978.9171243}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " include", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 29, "ts": 1793604978.918122}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " 2, ", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 30, "ts": 1793604978.932129}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "3, 5", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 31, "ts": 1793604978.934126}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": ", 7,", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 32, "ts": 1793604978.9351225}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " 11,", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 33, "ts": 1793604978.9381318}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " and so on.", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 34, "ts": 1793604978.9521103}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "\n\nI", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 35, "ts": 1793604978.9531116}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " need", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 36, "ts": 1793604978.9541137}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " to state", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 37, "ts": 1793604979.004802}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " this in one sentence", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 38, "ts": 1793604979.0057983}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " in Chinese. I", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 39, "ts": 1793604979.006797}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "'ll", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 40, "ts": 1793604979.006797}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " give", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 41, "ts": 1793604979.0077934}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " a concise,", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 42, "ts": 1793604979.0077934}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " clear", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 43, "ts": 1793604979.0087929}
+
+event: reasoning.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": " answer.\n", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 44, "ts": 1793604979.0087929}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "质数（", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 45, "ts": 1793604979.0108037}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "素", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 46, "ts": 1793604979.0188015}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "数）是", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 47, "ts": 1793604979.0207984}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "大于1", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 48, "ts": 1793604979.0218003}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "且", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 49, "ts": 1793604979.0238008}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "只能被1和", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 50, "ts": 1793604979.0357962}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "它本身整除", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 51, "ts": 1793604979.036793}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "的自然数，", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 52, "ts": 1793604979.2415457}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "无法", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 53, "ts": 1793604979.4704554}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "拆", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 54, "ts": 1793604979.4729936}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "成两个更小", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 55, "ts": 1793604979.473998}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "正", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 56, "ts": 1793604979.4749935}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "整数的乘积", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 57, "ts": 1793604979.4899943}
+
+event: assistant.delta
+data: {"message_id": "msg_66bede0426574dd69cb235e490659101", "delta": "。", "session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 58, "ts": 1793604979.4939928}
+
+event: assistant.completed
+data: {"session_id": "api_1793604931_c7b00690", "message_id": "msg_66bede0426574dd69cb235e490659101", "content": "质数（素数）是大于1且只能被1和它本身整除的自然数，无法拆成两个更小正整数的乘积。", "completed": true, "partial": false, "interrupted": false, "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 59, "ts": 1793604979.5840576}
+
+event: run.completed
+data: {"session_id": "api_1793604931_c7b00690", "message_id": "msg_66bede0426574dd69cb235e490659101", "completed": true, "interrupted": false, "messages": [{"role": "assistant", "content": "质数（素数）是大于1且只能被1和它本身整除的自然数，无法拆成两个更小正整数的乘积。", "finish_reason": "stop", "reasoning": "The user is asking me to explain what a prime number is in a single sentence. And they want me to think it through in my head first.\n\nLet me think: A prime number is a natural number greater than 1 that has only two factors, 1 and itself. It cannot be expressed as the product of two smaller natural numbers. Examples include 2, 3, 5, 7, 11, and so on.\n\nI need to state this in one sentence in Chinese. I'll give a concise, clear answer.\n", "reasoning_content": "The user is asking me to explain what a prime number is in a single sentence. And they want me to think it through in my head first.\n\nLet me think: A prime number is a natural number greater than 1 that has only two factors, 1 and itself. It cannot be expressed as the product of two smaller natural numbers. Examples include 2, 3, 5, 7, 11, and so on.\n\nI need to state this in one sentence in Chinese. I'll give a concise, clear answer.\n"}], "usage": {"input_tokens": 18239, "output_tokens": 149, "total_tokens": 18388}, "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 60, "ts": 1793604979.5840576}
+
+event: done
+data: {"session_id": "api_1793604931_c7b00690", "run_id": "run_8b3a92af6bf64e6e8deb9fb970096aef", "seq": 61, "ts": 1793604979.5840576}

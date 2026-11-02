@@ -63,6 +63,110 @@ from agent.redact import redact_sensitive_text
 logger = logging.getLogger(__name__)
 
 
+class _ThinkTagStreamSplitter:
+    """把 content 流拆成 reasoning / answer，供 chat/stream 双通道推送。
+
+    识别 ``<think>`` / ``<reasoning>`` / ``<REASONING_SCRATCHPAD>`` 等标签；
+    标签内文本走 reasoning，其余走 answer。标签本身不外发。
+    """
+
+    _OPEN_TAGS = (
+        "<REASONING_SCRATCHPAD>",
+        "<think>",
+        "<reasoning>",
+        "<THINKING>",
+        "<thinking>",
+        "<thought>",
+    )
+    _CLOSE_TAGS = (
+        "</REASONING_SCRATCHPAD>",
+        "</think>",
+        "</reasoning>",
+        "</THINKING>",
+        "</thinking>",
+        "</thought>",
+    )
+
+    def __init__(self) -> None:
+        self._buf = ""
+        self._in_think = False
+
+    def feed(self, text: str):
+        """Yield ``("reasoning"|"answer", piece)`` 片段。"""
+        if not text:
+            return
+        self._buf += text
+        while self._buf:
+            lower = self._buf.lower()
+            if self._in_think:
+                best_idx = -1
+                best_len = 0
+                for tag in self._CLOSE_TAGS:
+                    idx = lower.find(tag.lower())
+                    if idx != -1 and (best_idx == -1 or idx < best_idx):
+                        best_idx = idx
+                        best_len = len(tag)
+                if best_len:
+                    inner = self._buf[:best_idx]
+                    if inner:
+                        yield "reasoning", inner
+                    self._buf = self._buf[best_idx + best_len :]
+                    self._in_think = False
+                    continue
+                max_tag = max(len(t) for t in self._CLOSE_TAGS)
+                if len(self._buf) > max_tag:
+                    yield "reasoning", self._buf[:-max_tag]
+                    self._buf = self._buf[-max_tag:]
+                return
+
+            best_idx = -1
+            best_len = 0
+            for tag in self._OPEN_TAGS:
+                tag_lower = tag.lower()
+                search = 0
+                while True:
+                    idx = lower.find(tag_lower, search)
+                    if idx == -1:
+                        break
+                    preceding = self._buf[:idx]
+                    last_nl = preceding.rfind("\n")
+                    if idx == 0 or (last_nl != -1 and preceding[last_nl + 1 :].strip() == ""):
+                        if best_idx == -1 or idx < best_idx:
+                            best_idx = idx
+                            best_len = len(tag)
+                        break
+                    if last_nl == -1 and preceding.strip() == "":
+                        if best_idx == -1 or idx < best_idx:
+                            best_idx = idx
+                            best_len = len(tag)
+                        break
+                    search = idx + 1
+
+            if best_len:
+                before = self._buf[:best_idx]
+                if before:
+                    yield "answer", before
+                self._buf = self._buf[best_idx + best_len :]
+                self._in_think = True
+                continue
+
+            held = 0
+            for tag in self._OPEN_TAGS:
+                tag_lower = tag.lower()
+                for i in range(1, len(tag)):
+                    if lower.endswith(tag_lower[:i]) and i > held:
+                        held = i
+            if held:
+                safe = self._buf[:-held]
+                if safe:
+                    yield "answer", safe
+                self._buf = self._buf[-held:]
+            else:
+                yield "answer", self._buf
+                self._buf = ""
+            return
+
+
 def _hermes_version() -> str:
     """Return the hermes-agent version string, or "dev" if it can't be resolved.
 
@@ -1235,6 +1339,7 @@ class APIServerAdapter(BasePlatformAdapter):
         tool_progress_callback=None,
         tool_start_callback=None,
         tool_complete_callback=None,
+        reasoning_callback=None,
         gateway_session_key: Optional[str] = None,
         route: Optional[Dict[str, Any]] = None,
     ) -> Any:
@@ -1352,6 +1457,7 @@ class APIServerAdapter(BasePlatformAdapter):
             tool_progress_callback=tool_progress_callback,
             tool_start_callback=tool_start_callback,
             tool_complete_callback=tool_complete_callback,
+            reasoning_callback=reasoning_callback,
             session_db=self._ensure_session_db(),
             fallback_model=fallback_model,
             reasoning_config=reasoning_config,
@@ -1969,13 +2075,40 @@ class APIServerAdapter(BasePlatformAdapter):
             except RuntimeError:
                 pass
 
+        reasoning_streamed = {"yes": False}
+        think_splitter = _ThinkTagStreamSplitter()
+
+        def _reasoning_delta(text: str) -> None:
+            if text:
+                reasoning_streamed["yes"] = True
+                _enqueue("reasoning.delta", {"message_id": message_id, "delta": text})
+
         def _delta(delta: str) -> None:
-            if delta:
-                _enqueue("assistant.delta", {"message_id": message_id, "delta": delta})
+            # None = 中间轮次边界（即将执行工具），重置标签拆分状态
+            if delta is None:
+                think_splitter.__init__()
+                return
+            if not delta:
+                return
+            # 拆分 <think> 等标签：思考走 reasoning.delta，正文走 assistant.delta
+            for kind, piece in think_splitter.feed(delta):
+                if not piece:
+                    continue
+                if kind == "reasoning":
+                    reasoning_streamed["yes"] = True
+                    _enqueue("reasoning.delta", {"message_id": message_id, "delta": piece})
+                else:
+                    _enqueue("assistant.delta", {"message_id": message_id, "delta": piece})
 
         def _tool_progress(event_type: str, tool_name: str = None, preview: str = None, args=None, **kwargs) -> None:
             if event_type == "reasoning.available":
-                _enqueue("tool.progress", {"message_id": message_id, "tool_name": tool_name or "_thinking", "delta": preview or ""})
+                # 已有 token 级 reasoning.delta 则跳过整段回灌
+                if reasoning_streamed["yes"]:
+                    return
+                text = preview or ""
+                if text:
+                    reasoning_streamed["yes"] = True
+                    _enqueue("reasoning.delta", {"message_id": message_id, "delta": text})
             elif event_type in {"tool.started", "tool.completed", "tool.failed"}:
                 event_name = event_type.replace("tool.", "tool.")
                 _enqueue(event_name, {"message_id": message_id, "tool_name": tool_name, "preview": preview, "args": args})
@@ -1992,6 +2125,7 @@ class APIServerAdapter(BasePlatformAdapter):
                     session_id=session_id,
                     stream_delta_callback=_delta,
                     tool_progress_callback=_tool_progress,
+                    reasoning_callback=_reasoning_delta,
                     agent_ref=agent_ref,
                     gateway_session_key=gateway_session_key,
                     route=route,
@@ -4057,6 +4191,7 @@ class APIServerAdapter(BasePlatformAdapter):
         tool_progress_callback=None,
         tool_start_callback=None,
         tool_complete_callback=None,
+        reasoning_callback=None,
         agent_ref: Optional[list] = None,
         gateway_session_key: Optional[str] = None,
         route: Optional[Dict[str, Any]] = None,
@@ -4094,6 +4229,7 @@ class APIServerAdapter(BasePlatformAdapter):
                     tool_progress_callback=tool_progress_callback,
                     tool_start_callback=tool_start_callback,
                     tool_complete_callback=tool_complete_callback,
+                    reasoning_callback=reasoning_callback,
                     gateway_session_key=gateway_session_key,
                     route=route,
                 )

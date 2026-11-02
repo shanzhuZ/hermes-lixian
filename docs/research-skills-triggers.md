@@ -78,4 +78,4 @@
 
 ---
 
-Java 对话网关见：[`clients/hermes-xw/README.md`](../clients/hermes-xw/README.md)（ask 预建任务 + SSE 展示；过程/终稿由 `plugins/xw-ingest` 直连 MySQL）。
+Java 流式问答网关见：[`clients/lixian-chat/README.md`](../clients/lixian-chat/README.md)（sessionId/taskId + SSE；本阶段内存态，不落库）。

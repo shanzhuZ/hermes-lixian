@@ -1,9 +1,18 @@
 model:
-  # DeepSeek V4：官方 ID 为 deepseek-v4-flash / deepseek-v4-pro（无 deepseek-v4 单名）
-  default: deepseek-v4-flash
-  provider: deepseek
-  base_url: https://api.deepseek.com
-  # 备用主模型：大数据自建 DeepSeek（内网直连，见下方 providers.dsv4-dspark）
+  # 内网 OpenAI 兼容：Qwen3.8-27B
+  default: Qwen3.8-27B
+  provider: custom
+  base_url: http://172.200.200.1:8004/v1
+  api_key: ""   # 该端点 curl 无 Authorization，留空即可
+  # 上一版 R1 Distill（备用）
+  #   default: DeepSeek-R1-Distill-Llama-70B
+  #   provider: custom
+  #   base_url: http://172.200.200.3:1025/v1
+  # 原官方 DeepSeek（备用）
+  #   default: deepseek-v4-flash
+  #   provider: deepseek
+  #   base_url: https://api.deepseek.com
+  # 大数据自建（备用，见下方 providers.dsv4-dspark）
   #   default: dsv4-dspark
   #   provider: custom:dsv4-dspark
   #   base_url: http://172.200.200.4:7000/v1
@@ -54,8 +63,3 @@ mcp_servers:
 onboarding:
   seen:
     tool_progress_prompt: true
-
-# 过程入库插件（Hook 直连 MySQL；终稿也由 Hook 写）
-plugins:
-  enabled:
-    - xw-ingest
