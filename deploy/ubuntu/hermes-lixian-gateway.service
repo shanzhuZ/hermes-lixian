@@ -1,0 +1,18 @@
+[Unit]
+Description=Hermes Lixian Gateway (independent of hermes-xa)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/hermes-lixian
+Environment=HERMES_HOME=/opt/hermes-lixian/var/hermes
+Environment=LIXIAN_ROOT=/opt/hermes-lixian
+Environment=LIXIAN_PYTHON=/opt/hermes-lixian/hermes-agent/venv/bin/python
+Environment=PATH=/opt/hermes-lixian/hermes-agent/venv/bin:/usr/bin
+ExecStart=/opt/hermes-lixian/chat.sh gateway
+Restart=on-failure
+RestartSec=5
+# User=hermes
+
+[Install]
+WantedBy=multi-user.target

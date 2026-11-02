@@ -2,7 +2,7 @@
 
 Hermes 把**配置 + 运行时状态**都放在 `HERMES_HOME` 下。以前 `chat.ps1` 设的是仓库根目录 `D:\hermes-lixian`，所以 `gateway.lock`、`kanban.db` 等会落在根目录。
 
-现已改为：**`HERMES_HOME=D:\hermes-lixian\var\hermes`**（见 `chat.ps1` + `scripts/init-hermes-runtime.ps1`）。
+现已改为：**`HERMES_HOME=<repo>/var/hermes`**（见 `chat.ps1` / `chat.sh` + `scripts/init-hermes-runtime.*`）。
 
 ## 根目录常见文件是否有用
 
@@ -24,7 +24,7 @@ Hermes 把**配置 + 运行时状态**都放在 `HERMES_HOME` 下。以前 `chat
 
 - 运行时：`var/hermes/`（已加入 `.gitignore`）
 - 仓库根保留：`config.yaml`、`skills/`、`.env`、文档、Java 客户端等
-- 首次或换机：执行 `.\scripts\init-hermes-runtime.ps1`，再 `.\chat.ps1 chat` / `gateway`
+- 首次或换机：Windows 执行 `.\scripts\init-hermes-runtime.ps1`；Ubuntu 执行 `bash scripts/init-hermes-runtime.sh`；再 `chat.ps1` / `./chat.sh gateway`
 
 ## 清理旧根目录残留（Gateway 已停）
 

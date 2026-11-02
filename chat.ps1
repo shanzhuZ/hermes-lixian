@@ -13,7 +13,22 @@ if (-not (Test-Path $RuntimeHome)) {
 
 # 每次启动强制覆盖，避免当前窗口残留其它项目的 HERMES_HOME
 $env:HERMES_HOME = $RuntimeHome
+# MCP config.yaml 用 ${LIXIAN_ROOT} / ${LIXIAN_PYTHON}，勿写死盘符
+$env:LIXIAN_ROOT = $RepoRoot
+if (-not $env:LIXIAN_PYTHON) {
+    $venvPy = Join-Path $RepoRoot "hermes-agent\venv\Scripts\python.exe"
+    $fallbackPy = "D:\environment\python\python.exe"
+    if (Test-Path $venvPy) {
+        $env:LIXIAN_PYTHON = $venvPy
+    } elseif (Test-Path $fallbackPy) {
+        $env:LIXIAN_PYTHON = $fallbackPy
+    } else {
+        $env:LIXIAN_PYTHON = (Get-Command python -ErrorAction Stop).Source
+    }
+}
 Write-Host "HERMES_HOME=$env:HERMES_HOME"
+Write-Host "LIXIAN_ROOT=$env:LIXIAN_ROOT"
+Write-Host "LIXIAN_PYTHON=$env:LIXIAN_PYTHON"
 
 # 解析 hermes.exe：HERMES_BIN > 本仓库 venv > PATH（不再默认落到 hermes-xa）
 $hermesExe = $null
@@ -30,10 +45,10 @@ if ($env:HERMES_BIN -and (Test-Path $env:HERMES_BIN)) {
 if (-not $hermesExe) {
     throw @"
 本仓库尚未安装 hermes CLI。请先执行：
-  cd D:\hermes-lixian\hermes-agent
+  cd $RepoRoot\hermes-agent
   python -m venv venv
   .\venv\Scripts\python.exe -m pip install -U pip
-  .\venv\Scripts\pip.exe install -e .
+  .\venv\Scripts\pip.exe install -e .[messaging]
 然后再运行: .\chat.ps1 gateway
 或设置 HERMES_BIN 指向本仓库的 hermes.exe。
 "@

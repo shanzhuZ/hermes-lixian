@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# shell 脚本在 Ubuntu 上必须是 LF，避免 ^M / bad interpreter
+*.sh text eol=lf
+deploy/ubuntu/*.service text eol=lf
+*.ps1 text eol=crlf

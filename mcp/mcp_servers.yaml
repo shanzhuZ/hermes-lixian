@@ -1,11 +1,12 @@
 # hermes-lixian：仅人员库 + 组织库 MCP
+# 路径由 LIXIAN_ROOT / LIXIAN_PYTHON 注入（chat.sh / chat.ps1），勿写死盘符
 mcp_servers:
   identity-mcp:
     enabled: true
-    command: D:/environment/python/python.exe
+    command: ${LIXIAN_PYTHON}
     args:
-      - D:/hermes-lixian/mcp/servers/identity-mcp-server/run_identity_mcp.py
-    cwd: D:/hermes-lixian/mcp/servers/identity-mcp-server
+      - ${LIXIAN_ROOT}/mcp/servers/identity-mcp-server/run_identity_mcp.py
+    cwd: ${LIXIAN_ROOT}/mcp/servers/identity-mcp-server
     env:
       FASTMCP_SHOW_SERVER_BANNER: 'false'
       PYTHONUTF8: '1'
@@ -19,10 +20,10 @@ mcp_servers:
     connect_timeout: 120
   org-mcp:
     enabled: true
-    command: D:/environment/python/python.exe
+    command: ${LIXIAN_PYTHON}
     args:
-      - D:/hermes-lixian/mcp/servers/org-mcp-server/run_org_mcp.py
-    cwd: D:/hermes-lixian/mcp/servers/org-mcp-server
+      - ${LIXIAN_ROOT}/mcp/servers/org-mcp-server/run_org_mcp.py
+    cwd: ${LIXIAN_ROOT}/mcp/servers/org-mcp-server
     env:
       FASTMCP_SHOW_SERVER_BANNER: 'false'
       PYTHONUTF8: '1'

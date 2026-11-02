@@ -16,15 +16,27 @@
 `org-mcp` 在 config 里 `enabled: true` **不代表**其工具一定出现在当前会话（API server 会话、`platform_toolsets` 限制、启动时序都可能漏挂）。先确认工具列表里有没有 `search_orgs` 等；若没有，**不要断言"库不可用"**，直接复用 MCP server 自带的纯 stdlib 客户端（无第三方依赖，自动读 server 目录下 `.env` 的 ES 凭证，亦接受进程环境变量覆盖）：
 
 ```python
-import sys
-sys.path.insert(0, r"D:\hermes-lixian\mcp\servers\org-mcp-server")
+import os, sys
+from pathlib import Path
+
+def _repo_root():
+    if os.environ.get("LIXIAN_ROOT"):
+        return Path(os.environ["LIXIAN_ROOT"])
+    hh = Path(os.environ.get("HERMES_HOME", "")).resolve()
+    # 约定 HERMES_HOME=<repo>/var/hermes
+    if hh.name == "hermes" and hh.parent.name == "var":
+        return hh.parent.parent
+    raise RuntimeError("请设置 LIXIAN_ROOT，或 HERMES_HOME=<repo>/var/hermes")
+
+root = _repo_root()
+sys.path.insert(0, str(root / "mcp" / "servers" / "org-mcp-server"))
 from org_client import search_orgs, list_org_types, lookup_org_by_name, lookup_org_by_id
 
 res = search_orgs(org_type="智库", location_country="united states", biz_tag="涉华", size=40)
 # 返回结构与 MCP 工具一致：total_hits / is_sample / has_more / next_search_after / results[].evidence_brief
 ```
 
-运行方式：`write_file` 写临时 `.py` → terminal 用 MCP 同款解释器执行（`D:/environment/python/python.exe <脚本>`）→ 跑完 `rm -f` 临时脚本。若 `execute_code` 跑此类脚本触发审批，同样改用 write_file + terminal，更顺。
+运行方式：`write_file` 写临时 `.py` → terminal 用 MCP 同款解释器执行（`$LIXIAN_PYTHON <脚本>`，Linux 多为 `python3`）→ 跑完删除临时脚本。若 `execute_code` 跑此类脚本触发审批，同样改用 write_file + terminal，更顺。
 
 此路径已实战验证（2026-11-02「美国涉华智库」40 家查询）：`search_orgs` / `list_org_types` 直连 ES 正常，参数与返回值和 MCP 工具完全一致。
 

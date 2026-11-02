@@ -3,7 +3,11 @@ $ErrorActionPreference = "Stop"
 $RepoRoot = Split-Path $PSScriptRoot -Parent
 $AgentDir = Join-Path $RepoRoot "hermes-agent"
 $VenvDir = Join-Path $AgentDir "venv"
-$Py = "D:\environment\python\python.exe"
+# 优先本机常用解释器，否则 PATH 上的 python
+$Py = $env:LIXIAN_PYTHON
+if (-not $Py -or -not (Test-Path $Py)) {
+    $Py = "D:\environment\python\python.exe"
+}
 if (-not (Test-Path $Py)) {
     $Py = (Get-Command python -ErrorAction Stop).Source
 }

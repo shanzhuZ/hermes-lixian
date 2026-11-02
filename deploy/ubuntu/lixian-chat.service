@@ -1,0 +1,16 @@
+[Unit]
+Description=Lixian Chat Java SSE Gateway
+After=network.target hermes-lixian-gateway.service
+Wants=hermes-lixian-gateway.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/hermes-lixian/clients/lixian-chat
+# 开发期可用 mvn；生产建议先 mvn -DskipTests package 后改成 java -jar
+ExecStart=/usr/bin/mvn -DskipTests spring-boot:run
+Restart=on-failure
+RestartSec=5
+# User=hermes
+
+[Install]
+WantedBy=multi-user.target

@@ -9,14 +9,15 @@ hermes-lixian 的 Java 流式问答网关（Spring Boot 2.6 / JDK8）。
 ## 依赖
 
 1. 用**本仓库**启动 Hermes API Server（不要用 hermes-xa）：
-   `D:\hermes-lixian\scripts\setup-hermes-venv.ps1`（首次）→ 停掉占用 8642 的旧 gateway → `.\chat.ps1 gateway`  
-   （`.env` 中 `API_SERVER_ENABLED=true`，默认 `127.0.0.1:8642`）
-2. `application.yml` 中 `hermes.api-key` 与 `.env` 的 `API_SERVER_KEY` 一致
+   - Windows：`.\scripts\setup-hermes-venv.ps1` → `.\chat.ps1 gateway`
+   - Ubuntu：`bash scripts/setup-hermes-venv.sh` → `./chat.sh gateway`
+   （`.env` 中 `API_SERVER_ENABLED=true`；单机默认 `127.0.0.1:8642`，与 xa 同机请改 `8643`）
+2. `application.yml` 中 `hermes.api-key` 与 `.env` 的 `API_SERVER_KEY` 一致；`hermes.base-url` 端口与 `API_SERVER_PORT` 一致
 
 ## 启动
 
-```powershell
-cd D:\hermes-lixian\clients\lixian-chat
+```bash
+cd clients/lixian-chat
 mvn -DskipTests spring-boot:run
 ```
 
