@@ -9,6 +9,10 @@ type Result {
 }
 
 type Query {
-    # 问答历史分页查询（ES: sz_lixian_xw）
-    getChatHistory(userId: String, sessionId: String, taskId: String, keyword: String, pageNo: Int, pageSize: Int): Result
+    # 问答历史分页查询（ES: sz_lixian_xw）：按 sessionId 聚合，每会话返回最新一轮 + turnCount，add_date 倒序
+    getChatHistory(userId: String, keyword: String, pageNo: Int, pageSize: Int): Result
+    # 会话详情：按 sessionId 聚合该会话全部问答，add_date 升序；records 为对象 {sessionId,userId,title,turnCount,firstAddDate,lastAddDate,turns[]}
+    getChatSessionDetail(sessionId: String!): Result
+    # 按 sessionId 删除该会话全部历史任务（ES: sz_lixian_xw）；有进行中任务返回 409；records={sessionId,found,deleted}
+    deleteChatSession(sessionId: String!): Result
 }

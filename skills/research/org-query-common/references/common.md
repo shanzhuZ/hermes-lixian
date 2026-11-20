@@ -36,9 +36,11 @@ res = search_orgs(org_type="智库", location_country="united states", biz_tag="
 # 返回结构与 MCP 工具一致：total_hits / is_sample / has_more / next_search_after / results[].evidence_brief
 ```
 
-运行方式：`write_file` 写临时 `.py` → terminal 用 MCP 同款解释器执行（`$LIXIAN_PYTHON <脚本>`，Linux 多为 `python3`）→ 跑完删除临时脚本。若 `execute_code` 跑此类脚本触发审批，同样改用 write_file + terminal，更顺。
+运行方式：`write_file` 写临时 `.py` → terminal 用 MCP 同款解释器执行（`$LIXIAN_PYTHON <脚本>`，Linux 多为 `python3`；Windows 上 `LIXIAN_PYTHON` 是原生路径如 `D:\...\venv\Scripts\python.exe`，git-bash 里可直接执行，无需转换）→ 跑完删除临时脚本。若 `execute_code` 跑此类脚本触发审批，同样改用 write_file + terminal，更顺。
 
-此路径已实战验证（2026-11-02「美国涉华智库」40 家查询）：`search_orgs` / `list_org_types` 直连 ES 正常，参数与返回值和 MCP 工具完全一致。
+翻页攒池：终止条件用 `has_more=false` **或** `returned=0`——末页可能为空（上一页 `has_more=true` 但已取尽全部 `total_hits`，下一页返回 0 条，属正常结束）。
+
+此路径已实战验证（2026-11-02「美国涉华智库」40 家查询；2026-11-19 Windows 复核，size=20 翻页 20+20+0 取满 40 条）：`search_orgs` / `list_org_types` 直连 ES 正常，参数与返回值和 MCP 工具完全一致。
 
 ## V1 范围
 
@@ -90,12 +92,13 @@ res = search_orgs(org_type="智库", location_country="united states", biz_tag="
 - `has_more` / `next_search_after`：翻页攒池
 - 无标签 ≠ 一定无涉华，只是未打上业务标签（有标签文档约数千量级，远小于全库）
 
-**输出结构（组织画像卡片）：**
+**输出格式（最低要求）：**
 
-1. 结论一句  
-2. 符合：`名称 | L1 | L2 | 业务标签 | 国家 | 行业 | 规模 | 成立年 | 网站 | org_id | evidence_brief`  
-3. 存疑/排除（可选；同名噪声、低置信度）  
-4. 范围：是否采样、条件、`tag_method`、是否分页合并、下一步  
+- 每个大点用加粗序号标题开头，如 `**一、典型智库**`、`**二、说明**`
+- 有 3 条及以上名单时用 Markdown 表格，表头须包含「名称」列，其余列按内容选取，不必固定
+- 没有名单的回答不要硬套表格，用加粗序号标题 + 段落或列表即可
+- 范围、是否采样、条件、`tag_method`、是否分页合并、下一步仍须交代（可放在最后一个大点里）
+- 同名噪声、低置信度的条目需注明原因
 
 禁止：宽采样未攒池时，对「其中再筛」给出「全无/没有」类命中集结论。  
 禁止：把 Word 需求中的关系边/事件能力说成已入库。

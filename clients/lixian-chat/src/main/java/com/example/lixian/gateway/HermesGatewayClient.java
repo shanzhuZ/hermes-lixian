@@ -24,6 +24,14 @@ public class HermesGatewayClient {
 
     private static final Logger log = LoggerFactory.getLogger(HermesGatewayClient.class);
 
+    /**
+     * 每次流式问答附加的临时系统指令（Hermes 的 system_message，不写入会话历史）：
+     * 要求思考过程（reasoning）与最终回答都使用简体中文，避免 reasoning.delta 出现英文。
+     */
+    private static final String CHINESE_SYSTEM_MESSAGE =
+            "无论是内部思考（reasoning / thinking）还是最终回答，全程使用简体中文，禁止用英文思考。"
+                    + "代码、字段名、专有名词可保留英文原文。";
+
     private final HermesProperties props;
 
     public HermesGatewayClient(HermesProperties props) {
@@ -74,6 +82,7 @@ public class HermesGatewayClient {
         }
         JSONObject req = new JSONObject();
         req.put("message", userMessage == null ? "" : userMessage);
+        req.put("system_message", CHINESE_SYSTEM_MESSAGE);
         String url = trimSlash(props.getBaseUrl()) + "/api/sessions/" + hermesSessionId.trim() + "/chat/stream";
 
         HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();

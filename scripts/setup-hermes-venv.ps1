@@ -31,10 +31,10 @@ try {
         Write-Host "uv sync ..."
         & $uv.Source sync --python $venvPy
         # API Server / gateway 需要 aiohttp（在 messaging extra 里）
-        & $uv.Source pip install -e ".[messaging]" --python $venvPy
+        & $uv.Source pip install -e ".[messaging,mcp]" --python $venvPy
     } else {
-        Write-Host "pip install -e .[messaging] ..."
-        & $pip install -e ".[messaging]"
+        Write-Host "pip install -e .[messaging,mcp] ..."
+        & $pip install -e ".[messaging,mcp]"
     }
     $hermes = Join-Path $VenvDir "Scripts\hermes.exe"
     if (-not (Test-Path $hermes)) {

@@ -1,5 +1,6 @@
 package com.example.lixian.service;
 
+import com.example.lixian.entity.Result;
 import com.example.lixian.gateway.HermesGatewayClient;
 import com.example.lixian.gateway.StreamHandle;
 import com.example.lixian.gateway.TaskCancelledException;
@@ -9,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -80,6 +82,22 @@ public class ChatService {
      * 发起问答：立即返回 taskId（status=running）；后台拉 Hermes 流并广播 SSE；结束后写入 ES。
      */
     public Map<String, Object> ask(String sessionId, String message, String userId) throws Exception {
+        return ask(sessionId, message, userId, null);
+    }
+
+    /**
+     * 发起问答并直接流式返回：入库（内存任务 + 结束后写 ES）后，把本次请求的 SseEmitter 订阅到该任务，
+     * 事件与 /tasks/{taskId}/stream 一致，客户端无需再访问 stream 接口。
+     * 客户端断开不会取消任务，任务仍会跑完并写入 ES；如需中止请调用 /cancel。
+     */
+    public SseEmitter askStream(String sessionId, String message, String userId) throws Exception {
+        final SseEmitter emitter = new SseEmitter(1_800_000L);
+        ask(sessionId, message, userId, emitter);
+        return emitter;
+    }
+
+    private Map<String, Object> ask(String sessionId, String message, String userId,
+                                    final SseEmitter emitter) throws Exception {
         if (message == null || message.trim().isEmpty()) {
             throw new IllegalArgumentException("message 不能为空");
         }
@@ -99,21 +117,65 @@ public class ChatService {
         task.setCreatedAt(now);
         task.setUpdatedAt(now);
         memoryStore.putTask(task);
+        // 创建任务即入库：status=running；终态由 markEnd/markCancelled/markFailed 更新
+        chatHistoryEsService.saveRunning(uid, taskId, session.getSessionId(), task.getMessage());
 
         final StreamHandle handle = new StreamHandle();
         activeHandles.put(taskId, handle);
+
+        // 流式 ask：先订阅再推事件，保证不丢帧
+        if (emitter != null) {
+            streamHub.subscribe(taskId, emitter);
+            emitter.onCompletion(new Runnable() {
+                @Override
+                public void run() {
+                    streamHub.unsubscribe(taskId, emitter);
+                }
+            });
+            emitter.onTimeout(new Runnable() {
+                @Override
+                public void run() {
+                    streamHub.unsubscribe(taskId, emitter);
+                    emitter.complete();
+                }
+            });
+            emitter.onError(new java.util.function.Consumer<Throwable>() {
+                @Override
+                public void accept(Throwable t) {
+                    streamHub.unsubscribe(taskId, emitter);
+                }
+            });
+            try {
+                emitter.send(SseEmitter.event().name("connected")
+                        .data("{\"taskId\":\"" + taskId + "\",\"sessionId\":\"" + session.getSessionId()
+                                + "\",\"hermesSessionId\":\"" + session.getHermesSessionId() + "\"}"));
+            } catch (Exception e) {
+                log.warn("SSE connected 发送失败 task={}: {}", taskId, e.getMessage());
+            }
+        }
 
         // 创建即推 running，方便先订阅 stream 的客户端立刻看到状态
         streamHub.dispatch(taskId, "status", "{\"status\":\"running\"}");
 
         final String hermesSid = session.getHermesSessionId();
         final String prompt = message.trim();
-        chatTaskExecutor.execute(new Runnable() {
-            @Override
-            public void run() {
-                runTaskStream(taskId, hermesSid, prompt, handle);
+        try {
+            chatTaskExecutor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    runTaskStream(taskId, hermesSid, prompt, handle);
+                }
+            });
+        } catch (RuntimeException e) {
+            // 线程池拒绝等：回滚订阅与任务状态，避免遗留 running 任务
+            if (emitter != null) {
+                streamHub.unsubscribe(taskId, emitter);
             }
-        });
+            activeHandles.remove(taskId);
+            markFailed(task, e.getMessage() == null ? e.getClass().getSimpleName() : e.getMessage());
+            streamHub.complete(taskId);
+            throw e;
+        }
 
         Map<String, Object> out = new HashMap<String, Object>();
         out.put("sessionId", session.getSessionId());
@@ -229,19 +291,38 @@ public class ChatService {
         task.setStatus(STATUS_CANCELLED);
         task.setError(reason);
         task.setUpdatedAt(System.currentTimeMillis());
+        persistStatus(task, "任务已取消");
     }
 
     private void markFailed(ChatTask task, String reason) {
         task.setStatus(STATUS_FAILED);
         task.setError(reason);
         task.setUpdatedAt(System.currentTimeMillis());
+        persistStatus(task, reason);
     }
 
     private void markEnd(ChatTask task, String answer) {
+        // 去掉模型输出开头/结尾的空行与空白，避免入库内容前面带换行
+        String clean = answer == null ? "" : answer.trim();
         task.setStatus(STATUS_END);
-        task.setAnswer(answer);
+        task.setAnswer(clean);
         task.setError(null);
         task.setUpdatedAt(System.currentTimeMillis());
+        persistStatus(task, clean);
+    }
+
+    /**
+     * 任务进入终态（end/cancelled/failed）时统一回写 ES 的 status 与 content。
+     * 所有终态路径都经过 mark*，因此这里是唯一的 ES 状态更新入口；ES 异常只记日志，不影响主流程。
+     */
+    private void persistStatus(ChatTask task, String content) {
+        chatHistoryEsService.updateStatus(
+                task.getUserId(),
+                task.getTaskId(),
+                task.getSessionId(),
+                task.getMessage(),
+                content,
+                task.getStatus());
     }
 
     private void dispatchTerminal(String taskId, String status, String message) {
@@ -258,6 +339,33 @@ public class ChatService {
             streamHub.dispatch(taskId, "stream_end", "{\"ok\":true}");
         }
         streamHub.complete(taskId);
+    }
+
+    /**
+     * 按 sessionId 删除历史：先拒绝仍有进行中任务的会话（否则任务结束时会把记录重新写回 ES），
+     * 再删除 ES 历史，成功后清理内存中的 session/task。
+     */
+    public Result deleteChatHistory(String sessionId) {
+        String sid = sessionId == null ? "" : sessionId.trim();
+        if (!sid.isEmpty()) {
+            for (ChatTask t : memoryStore.listTasksBySession(sid)) {
+                if (isActiveStatus(t.getStatus())) {
+                    Result busy = new Result();
+                    busy.setCode(409);
+                    busy.setMessage("会话有进行中任务，请先调用 /api/chat/cancel 取消后再删除: " + t.getTaskId());
+                    busy.setTotalCount(0);
+                    busy.setTotalPage(0);
+                    busy.setRecords(null);
+                    return busy;
+                }
+            }
+        }
+        Result result = chatHistoryEsService.deleteChatSession(sid);
+        // 200：已删除；404：ES 里本就没有，内存残留也一并清理
+        if (result.getCode() != null && (result.getCode() == 200 || result.getCode() == 404)) {
+            memoryStore.removeSession(sid);
+        }
+        return result;
     }
 
     public ChatTask getTask(String taskId) {
@@ -325,12 +433,6 @@ public class ChatService {
                     return;
                 }
                 markEnd(done, answer);
-                chatHistoryEsService.save(
-                        done.getUserId(),
-                        done.getTaskId(),
-                        done.getSessionId(),
-                        done.getMessage(),
-                        answer);
             }
             streamHub.dispatch(taskId, "status", "{\"status\":\"end\"}");
             streamHub.dispatch(taskId, "stream_end", "{\"ok\":true}");
@@ -340,12 +442,6 @@ public class ChatService {
             ChatTask cancelled = memoryStore.getTask(taskId);
             if (cancelled != null) {
                 markCancelled(cancelled, "用户取消");
-                chatHistoryEsService.save(
-                        cancelled.getUserId(),
-                        cancelled.getTaskId(),
-                        cancelled.getSessionId(),
-                        cancelled.getMessage(),
-                        "任务已取消");
             }
             dispatchTerminal(taskId, STATUS_CANCELLED, "任务已取消");
         } catch (Exception e) {
@@ -363,12 +459,6 @@ public class ChatService {
             ChatTask failed = memoryStore.getTask(taskId);
             if (failed != null) {
                 markFailed(failed, err);
-                chatHistoryEsService.save(
-                        failed.getUserId(),
-                        failed.getTaskId(),
-                        failed.getSessionId(),
-                        failed.getMessage(),
-                        err);
             }
             dispatchTerminal(taskId, STATUS_FAILED, err);
         } finally {

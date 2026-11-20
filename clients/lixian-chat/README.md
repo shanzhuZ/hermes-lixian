@@ -46,7 +46,8 @@ mvn -DskipTests spring-boot:run
 }
 ```
 
-返回：`sessionId`、`taskId`、`status=running`
+**直接以 SSE 流式返回**（入库后边跑边推，无需再访问 stream 接口）：首个事件 `connected` 携带 `taskId`、`sessionId`，其后为 `status`、`reasoning.delta`、`assistant.delta`、`tool.*`、`stream_end`。客户端断开不会取消任务，任务仍会跑完并写入 ES；如需中止请调用 `/cancel`。
+参数校验失败时返回 JSON：`{"ok":false,"message":"..."}`。
 
 任务状态：`running`（进行中）→ `end`（正常结束） / `cancelled`（取消） / `failed`（失败）
 
@@ -66,7 +67,7 @@ mvn -DskipTests spring-boot:run
 
 会断开 Hermes SSE（触发 agent interrupt），任务状态变为 `cancelled`。
 
-### 4. 订阅流式输出
+### 4. 重新订阅流式输出（断线重连用，ask 本身已是流式）
 
 `GET /api/chat/tasks/{taskId}/stream`
 
@@ -83,12 +84,10 @@ SSE 事件示例：`connected`、`status`、`reasoning.delta`（思考过程，t
 $s = Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8088/api/chat/sessions -ContentType 'application/json' -Body '{}'
 $s
 
-# 提问
-$ask = Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8088/api/chat/ask -ContentType 'application/json' -Body (@{ sessionId = $s.sessionId; message = '你好，简单介绍你能做什么' } | ConvertTo-Json)
-$ask
-
-# 另开窗口用 curl 拉流（或浏览器 EventSource）
-curl.exe -N "http://127.0.0.1:8088/api/chat/tasks/$($ask.taskId)/stream"
+# 提问（直接流式返回；-N 关闭缓冲）
+$body = (@{ sessionId = $s.sessionId; message = '你好，简单介绍你能做什么' } | ConvertTo-Json -Compress)
+[IO.File]::WriteAllText("$env:TEMP\ask.json", $body, (New-Object Text.UTF8Encoding($false)))
+curl.exe -N -X POST http://127.0.0.1:8088/api/chat/ask -H "Content-Type: application/json" --data-binary "@$env:TEMP\ask.json"
 ```
 
 ## 说明

@@ -48,7 +48,7 @@ if (-not $hermesExe) {
   cd $RepoRoot\hermes-agent
   python -m venv venv
   .\venv\Scripts\python.exe -m pip install -U pip
-  .\venv\Scripts\pip.exe install -e .[messaging]
+  .\venv\Scripts\pip.exe install -e .[messaging,mcp]
 然后再运行: .\chat.ps1 gateway
 或设置 HERMES_BIN 指向本仓库的 hermes.exe。
 "@

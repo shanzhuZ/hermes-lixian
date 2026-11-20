@@ -32,10 +32,10 @@ VENV_PY="${VENV_DIR}/bin/python"
 if command -v uv >/dev/null 2>&1; then
   echo "uv sync ..."
   uv sync --python "${VENV_PY}" || true
-  uv pip install -e '.[messaging]' --python "${VENV_PY}"
+  uv pip install -e '.[messaging,mcp]' --python "${VENV_PY}"
 else
-  echo "pip install -e '.[messaging]' ..."
-  "${PIP}" install -e '.[messaging]'
+  echo "pip install -e '.[messaging,mcp]' ..."
+  "${PIP}" install -e '.[messaging,mcp]'
 fi
 
 HERMES="${VENV_DIR}/bin/hermes"

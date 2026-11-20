@@ -23,7 +23,7 @@ import java.util.Map;
  * 流式问答接口（本阶段无鉴权；结束后写入 ES sz_lixian_xw）。
  * <p>
  * POST /api/chat/sessions
- * POST /api/chat/ask
+ * POST /api/chat/ask             入库 + 直接 SSE 流式返回（不再需要先拿 taskId 再访问 stream）
  * POST /api/chat/cancel          body: {taskId?} {sessionId?} 至少其一
  * GET  /api/chat/tasks/{taskId}
  * GET  /api/chat/tasks/{taskId}/stream
@@ -74,11 +74,13 @@ public class ChatApiController {
     }
 
     /**
-     * 发起问答。body: { "sessionId": "可选", "userId": "可选", "message": "必填" }
+     * 发起问答并直接流式返回（SSE）。body: { "sessionId": "可选", "userId": "可选", "message": "必填" }
      * 未传 sessionId 时自动建会话。任务结束后写入 ES。
+     * 事件：connected(含 taskId/sessionId) / status / reasoning.delta / assistant.delta / tool.* / stream_end。
+     * 参数校验失败时返回 JSON：{ok:false,message}。无需再访问 /tasks/{taskId}/stream（该接口保留用于断线重连）。
      */
     @PostMapping("/ask")
-    public Map<String, Object> ask(@RequestBody Map<String, Object> body) {
+    public Object ask(@RequestBody Map<String, Object> body) {
         try {
             if (body == null) {
                 return error("body 不能为空");
@@ -86,7 +88,7 @@ public class ChatApiController {
             String sessionId = asString(body.get("sessionId"));
             String userId = asString(body.get("userId"));
             String message = asString(body.get("message"));
-            return chatService.ask(sessionId, message, userId);
+            return chatService.askStream(sessionId, message, userId);
         } catch (IllegalArgumentException e) {
             return error(e.getMessage());
         } catch (Exception e) {

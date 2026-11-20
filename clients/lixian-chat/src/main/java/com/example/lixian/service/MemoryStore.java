@@ -39,6 +39,19 @@ public class MemoryStore {
         return tasks.get(taskId);
     }
 
+    /**
+     * 删除某会话的内存数据（session + 该会话下所有 task）。
+     */
+    public void removeSession(String sessionId) {
+        if (sessionId == null) {
+            return;
+        }
+        sessions.remove(sessionId);
+        for (ChatTask t : listTasksBySession(sessionId)) {
+            tasks.remove(t.getTaskId());
+        }
+    }
+
     public List<ChatTask> listTasksBySession(String sessionId) {
         List<ChatTask> list = new ArrayList<ChatTask>();
         if (sessionId == null) {

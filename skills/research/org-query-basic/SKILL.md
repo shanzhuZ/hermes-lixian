@@ -1,4 +1,4 @@
-﻿---
+---
 name: org-query-basic
 description: 组织库基础筛选与 AND 组合：一级/二级类型、业务标签（涉华展开）、国家地区、行业议题。触发词：美国涉华智库、军工企业、非政府组织、台在美团体、半导体、org-query-basic。
 version: 0.1.0
@@ -35,7 +35,8 @@ metadata:
 5. `军事安全议题` 面很宽，必须叠加类型+国家。  
 6. 需要更高精度可加 `min_tag_confidence=0.7`（会降召回）。  
 7. `is_sample` / `has_more`：说明本批非全集；「其中再筛」转 `org-query-multiturn`。  
-8. 交付核对 `org_types` / `biz_tags` / `evidence_brief` / `tag_confidence`。
+8. 交付核对 `org_types` / `biz_tags` / `evidence_brief` / `tag_confidence`。  
+9. L1 `智库` 是宽标签：「美国涉华智库」等宽查询命中里常混入市场调研、咨询、企业子公司等非典型机构（2026-11-19 实测 40 家中约半数为噪声）。交付分两档：「典型智库」（L2=安全智库/国际关系智库/经济智库 或 conf≥0.8）与「宽口径/存疑」（逐条标 conf、建议二次核实），不要平铺混排；可主动提示用 `org_type_l2` 收窄。
 
 ## 示例
 
