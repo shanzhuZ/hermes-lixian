@@ -1,0 +1,254 @@
+{
+  "items": [
+    {
+      "id": "person",
+      "name": "人员信息查询",
+      "groups": [
+        {
+          "name": "在华教育经历查询",
+          "tags": [
+            {
+              "id": "person.edu.mainland",
+              "label": "在华学历背景人员检索",
+              "question": "查询有在华学历背景的人员",
+              "enabled": true
+            },
+            {
+              "id": "person.edu.hk_tw",
+              "label": "港台求学经历人员检索",
+              "question": "查询有港台求学经历的人员",
+              "enabled": true
+            },
+            {
+              "id": "person.edu.profile",
+              "label": "在华教育背景画像",
+              "question": "查询人员的在华教育背景画像",
+              "enabled": false
+            },
+            {
+              "id": "person.edu.alumni",
+              "label": "指定院校校友背景检索",
+              "question": "按指定院校查询校友背景人员",
+              "enabled": false
+            }
+          ]
+        },
+        {
+          "name": "在华工作经历查询",
+          "tags": [
+            {
+              "id": "person.work.mainland",
+              "label": "在华工作经历人员检索",
+              "question": "查询有在华工作经历的人员",
+              "enabled": true
+            },
+            {
+              "id": "person.work.semiconductor",
+              "label": "半导体行业在华任职人员检索",
+              "question": "查询半导体行业有在华任职经历的人员",
+              "enabled": false
+            }
+          ]
+        },
+        {
+          "name": "行业领域查询",
+          "tags": [
+            {
+              "id": "person.industry.hi_tech_china",
+              "label": "高科技行业涉华人员检索",
+              "question": "查询高科技行业涉华人员",
+              "enabled": true
+            },
+            {
+              "id": "person.industry.semiconductor_china",
+              "label": "半导体行业在华任职人员检索",
+              "question": "查询半导体行业有在华任职经历的人员",
+              "enabled": false
+            },
+            {
+              "id": "person.industry.politician",
+              "label": "民选官员、政客核验检索",
+              "question": "核验民选官员或政客的人员信息",
+              "enabled": false
+            }
+          ]
+        },
+        {
+          "name": "地理位置查询",
+          "tags": [
+            {
+              "id": "person.geo.us_china",
+              "label": "现居美国涉华人员检索",
+              "question": "查询现居美国的涉华人员",
+              "enabled": true
+            },
+            {
+              "id": "person.geo.taiwan",
+              "label": "涉台人员筛查",
+              "question": "查询涉台人员",
+              "enabled": false
+            },
+            {
+              "id": "person.geo.hongkong",
+              "label": "涉港人员筛查",
+              "question": "查询涉港人员",
+              "enabled": false
+            }
+          ]
+        },
+        {
+          "name": "组织高管查询",
+          "tags": [
+            {
+              "id": "person.exec.china_bg",
+              "label": "企业高管涉华背景核查",
+              "question": "核查企业高管的涉华背景",
+              "enabled": false
+            },
+            {
+              "id": "person.exec.politician",
+              "label": "民选官员、政客核验检索",
+              "question": "核验民选官员或政客的人员信息",
+              "enabled": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "org",
+      "name": "组织信息查询",
+      "groups": [
+        {
+          "name": "组织类型查询",
+          "tags": [
+            {
+              "id": "org.type.ngo",
+              "label": "涉华非政府组织(NGO)检索",
+              "question": "查询涉华非政府组织",
+              "enabled": true
+            },
+            {
+              "id": "org.type.human_rights_issue",
+              "label": "涉华人权议题组织检索",
+              "question": "查询涉华人权议题相关组织",
+              "enabled": true
+            },
+            {
+              "id": "org.type.taiwan",
+              "label": "涉台组织检索",
+              "question": "查询涉台组织",
+              "enabled": false
+            },
+            {
+              "id": "org.type.politics",
+              "label": "涉华政治类组织检索",
+              "question": "查询涉华政治类组织",
+              "enabled": true
+            },
+            {
+              "id": "org.type.economy",
+              "label": "涉华经济类组织检索",
+              "question": "查询涉华经济类组织",
+              "enabled": false
+            },
+            {
+              "id": "org.type.tech",
+              "label": "涉华科技类组织检索",
+              "question": "查询涉华科技类组织",
+              "enabled": true
+            },
+            {
+              "id": "org.type.military",
+              "label": "涉华军事类组织检索",
+              "question": "查询涉华军事类组织",
+              "enabled": true
+            },
+            {
+              "id": "org.type.diplomacy",
+              "label": "涉华外交类组织检索",
+              "question": "查询涉华外交类组织",
+              "enabled": false
+            },
+            {
+              "id": "org.type.human_rights",
+              "label": "涉华人权类组织检索",
+              "question": "查询涉华人权类组织",
+              "enabled": false
+            },
+            {
+              "id": "org.type.taiwan_related",
+              "label": "涉华台湾类组织检索",
+              "question": "查询涉华台湾类组织",
+              "enabled": false
+            }
+          ]
+        },
+        {
+          "name": "行业领域查询",
+          "tags": [
+            {
+              "id": "org.industry.defense",
+              "label": "涉华军工企业检索",
+              "question": "查询涉华军工企业",
+              "enabled": false
+            },
+            {
+              "id": "org.industry.defense_semi",
+              "label": "军工与半导体科技竞争组织检索",
+              "question": "查询军工与半导体科技竞争相关组织",
+              "enabled": false
+            },
+            {
+              "id": "org.industry.thinktank_china",
+              "label": "涉华智库深度检索",
+              "question": "深度查询涉华智库",
+              "enabled": false
+            },
+            {
+              "id": "org.industry.us_china_thinktank",
+              "label": "美国涉华智库检索",
+              "question": "查询美国涉华智库",
+              "enabled": true
+            },
+            {
+              "id": "org.industry.security_thinktank",
+              "label": "安全智库专项检索",
+              "question": "查询安全类智库",
+              "enabled": false
+            },
+            {
+              "id": "org.industry.ir_thinktank",
+              "label": "国际关系智库专项检索",
+              "question": "查询国际关系类智库",
+              "enabled": false
+            },
+            {
+              "id": "org.industry.econ_thinktank",
+              "label": "经济智库专项检索",
+              "question": "查询经济类智库",
+              "enabled": false
+            }
+          ]
+        },
+        {
+          "name": "地理位置查询",
+          "tags": [
+            {
+              "id": "org.geo.tw_in_us",
+              "label": "台在美团体检索",
+              "question": "查询台在美团体",
+              "enabled": false
+            },
+            {
+              "id": "org.geo.taiwan",
+              "label": "涉台组织检索",
+              "question": "查询涉台组织",
+              "enabled": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

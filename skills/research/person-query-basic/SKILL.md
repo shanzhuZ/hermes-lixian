@@ -30,13 +30,14 @@ metadata:
 
 ## 策略
 
-1. 宽查询（只说涉华）→ 先澄清；否则默认 `biz_tag=涉华` + `location_country=united states` + `strict=true`。  
+1. 极宽且无硬条件（只说「涉华人员」）→ 先澄清；用户让你决定才用涉华+现居美国默认口径（见 common）。用户已给求学/工作/现居等条件 → **不静默加国家**。  
 2. 条件宜少而硬：`edu_country` / `work_country` / `location_country` / `company_keyword` / `school_keyword`。  
 3. 关键词由模型现场生成；**高校任职**用 `company_keyword`，**上学**用 `school_keyword` 或 `edu_country`。  
 4. 行业口语自行展开为 `industry_keywords`，交付时核对 `industry`，不符则剔除或存疑。  
 5. 自检：有 `edu_in_target` / `work_in_target` 才进「符合」。  
 6. 需要更大样本或「其中再筛」→ 转 `person-query-multiturn`。  
-7. 交付若 `is_sample=true` / `has_more=true`：须说明本批非全集；引导下一步时写清——「其中再筛」默认要先攒池或全库重查，只有用户明确「就这 N 人」才可对本批 `include_ids`。
+7. 交付若采样/还有更多：用白话说明本批非全集；下一步收窄只谈现居/行业/院校/公司等业务维度（见 common「面向用户」「宽查询呈现」）。  
+8. 「港台求学」等大库查询：台湾、香港可分节，但先总览再各抽少量样本，禁止在口径里写 `edu_country=`。
 
 ## 示例
 

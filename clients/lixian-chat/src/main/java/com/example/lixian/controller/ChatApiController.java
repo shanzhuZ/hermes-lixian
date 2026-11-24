@@ -3,7 +3,9 @@ package com.example.lixian.controller;
 import com.alibaba.fastjson.JSON;
 import com.example.lixian.model.ChatSession;
 import com.example.lixian.model.ChatTask;
+import com.example.lixian.model.QueryTagLevel1;
 import com.example.lixian.service.ChatService;
+import com.example.lixian.service.QueryTagService;
 import com.example.lixian.service.TaskStreamHub;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,6 +28,7 @@ import java.util.Map;
  * POST /api/chat/sessions
  * POST /api/chat/ask             入库 + 直接 SSE 流式返回（不再需要先拿 taskId 再访问 stream）
  * POST /api/chat/cancel          body: {taskId?} {sessionId?} 至少其一
+ * GET  /api/chat/query-tags      一级/二级标签树（三级 question 供点击后作为 ask message）
  * GET  /api/chat/tasks/{taskId}
  * GET  /api/chat/tasks/{taskId}/stream
  * GET  /api/chat/sessions/{sessionId}
@@ -42,10 +46,30 @@ public class ChatApiController {
 
     private final ChatService chatService;
     private final TaskStreamHub streamHub;
+    private final QueryTagService queryTagService;
 
-    public ChatApiController(ChatService chatService, TaskStreamHub streamHub) {
+    public ChatApiController(ChatService chatService, TaskStreamHub streamHub,
+                             QueryTagService queryTagService) {
         this.chatService = chatService;
         this.streamHub = streamHub;
+        this.queryTagService = queryTagService;
+    }
+
+    /**
+     * 查询标签树：页面渲染一级 name + 类目 groups + 二级 label；
+     * 点击二级时把 tags[].question 作为 POST /api/chat/ask 的 message。
+     */
+    @GetMapping("/query-tags")
+    public Map<String, Object> queryTags() {
+        String loadError = queryTagService.getLoadError();
+        if (loadError != null) {
+            return error("查询标签加载失败: " + loadError);
+        }
+        List<QueryTagLevel1> items = queryTagService.listTags();
+        Map<String, Object> out = new HashMap<String, Object>();
+        out.put("ok", Boolean.TRUE);
+        out.put("items", items);
+        return out;
     }
 
     @PostMapping("/sessions")

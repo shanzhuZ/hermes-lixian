@@ -603,6 +603,37 @@ def interruptible_api_call(agent, api_kwargs: dict):
 
 
 
+def _reasoning_prefill_text(agent) -> str:
+    """读取 config.yaml 的 model.reasoning_prefill（仅 Qwen 系列生效，留空即关闭）。"""
+    if "qwen" not in (agent.model or "").lower():
+        return ""
+    try:
+        from hermes_cli.config import load_config_readonly
+        model_cfg = (load_config_readonly() or {}).get("model")
+    except Exception:
+        return ""
+    if not isinstance(model_cfg, dict):
+        return ""
+    return str(model_cfg.get("reasoning_prefill") or "").strip()
+
+
+def _apply_reasoning_prefill(agent, api_kwargs: dict) -> dict:
+    """思考开头预填：在发给模型的请求副本末尾追加 <think>\\n + 前缀，让思考从该前缀开始。
+
+    使用 vLLM 的 continue_final_message 续写末尾 assistant 消息，不改会话历史。
+    """
+    prefix = _reasoning_prefill_text(agent)
+    msgs = api_kwargs.get("messages")
+    if not prefix or not msgs:
+        return api_kwargs
+    api_kwargs["messages"] = list(msgs) + [{"role": "assistant", "content": "<think>\n" + prefix}]
+    extra = dict(api_kwargs.get("extra_body") or {})
+    extra["continue_final_message"] = True
+    extra["add_generation_prompt"] = False
+    api_kwargs["extra_body"] = extra
+    return api_kwargs
+
+
 def build_api_kwargs(agent, api_messages: list) -> dict:
     """Build the keyword arguments dict for the active API mode."""
     tools_for_api = agent.tools
@@ -805,7 +836,7 @@ def build_api_kwargs(agent, api_messages: list) -> dict:
         # registered providers with profiles were bypassing the strip.
         api_messages = agent._prepare_messages_for_non_vision_model(api_messages)
 
-        return _ct.build_kwargs(
+        return _apply_reasoning_prefill(agent, _ct.build_kwargs(
             model=agent.model,
             messages=api_messages,
             tools=tools_for_api,
@@ -825,7 +856,7 @@ def build_api_kwargs(agent, api_messages: list) -> dict:
             anthropic_max_output=_ant_max,
             supports_reasoning=agent._supports_reasoning_extra_body(),
             qwen_session_metadata=_qwen_meta,
-        )
+        ))
 
     # ── Legacy flag path ────────────────────────────────────────────
     # Reached only when get_provider_profile() returns None — i.e. a
@@ -837,7 +868,7 @@ def build_api_kwargs(agent, api_messages: list) -> dict:
     # Strip image parts for non-vision models (no-op when vision-capable).
     _msgs_for_chat = agent._prepare_messages_for_non_vision_model(api_messages)
 
-    return _ct.build_kwargs(
+    return _apply_reasoning_prefill(agent, _ct.build_kwargs(
         model=agent.model,
         messages=_msgs_for_chat,
         tools=tools_for_api,
@@ -872,7 +903,7 @@ def build_api_kwargs(agent, api_messages: list) -> dict:
         lmstudio_reasoning_options=agent._lmstudio_reasoning_options_cached() if _is_lmstudio else None,
         anthropic_max_output=_ant_max,
         provider_name=agent.provider,
-    )
+    ))
 
 
 

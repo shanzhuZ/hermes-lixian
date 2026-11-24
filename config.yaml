@@ -4,6 +4,8 @@ model:
   provider: custom
   base_url: http://172.200.200.1:8004/v1
   api_key: ""   # 该端点 curl 无 Authorization，留空即可
+  # 思考开头预填（仅 Qwen 生效）：让 reasoning 从中文开始，留空则关闭
+  reasoning_prefill: "好的，"
   # 上一版 R1 Distill（备用）
   #   default: DeepSeek-R1-Distill-Llama-70B
   #   provider: custom

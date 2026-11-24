@@ -1,5 +1,5 @@
 [Unit]
-Description=Hermes Lixian Gateway (independent of hermes-xa)
+Description=Hermes Lixian Gateway (independent of hermes-xa/hq/hq-test; API_SERVER_PORT=8645 in .env)
 After=network.target
 
 [Service]
